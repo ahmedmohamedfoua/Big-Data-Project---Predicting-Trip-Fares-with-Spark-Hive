@@ -1,0 +1,8 @@
+Connecting to jdbc:hive2://hadoop-03.uni.innopolis.ru:10001/team6_projectdb
+2025-05-20 16:29:07,745 INFO jdbc.Utils: Supplied authorities: hadoop-03.uni.innopolis.ru:10001
+2025-05-20 16:29:07,745 INFO jdbc.Utils: Resolved authority: hadoop-03.uni.innopolis.ru:10001
+Connected to: Apache Hive (version 3.1.3)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+/home/team6/project/my-big-data-project-2025/hive/create_bucketed_table.hql (No such file or directory)
+Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001/team6_projectdb

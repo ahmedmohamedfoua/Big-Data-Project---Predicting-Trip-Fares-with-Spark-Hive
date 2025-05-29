@@ -1,0 +1,265 @@
+Connecting to jdbc:hive2://hadoop-03.uni.innopolis.ru:10001/team6_projectdb
+2025-05-20 01:42:28,903 INFO jdbc.Utils: Supplied authorities: hadoop-03.uni.innopolis.ru:10001
+2025-05-20 01:42:28,903 INFO jdbc.Utils: Resolved authority: hadoop-03.uni.innopolis.ru:10001
+Connected to: Apache Hive (version 3.1.3)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+INFO  : Compiling command(queryId=hive_20250520014229_098390eb-b529-4ed6-bf12-7852ed47ee0e): SELECT * FROM dim_base LIMIT 10
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:dim_base.base_num, type:string, comment:null)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250520014229_098390eb-b529-4ed6-bf12-7852ed47ee0e : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+    Fetch Operator
+      limit: 10
+      Processor Tree:
+        TableScan
+          alias: dim_base
+          GatherStats: false
+          Select Operator
+            expressions: base_num (type: string)
+            outputColumnNames: _col0
+            Limit
+              Number of rows: 10
+              ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250520014229_098390eb-b529-4ed6-bf12-7852ed47ee0e); Time taken: 0.198 seconds
+INFO  : Executing command(queryId=hive_20250520014229_098390eb-b529-4ed6-bf12-7852ed47ee0e): SELECT * FROM dim_base LIMIT 10
+INFO  : Completed executing command(queryId=hive_20250520014229_098390eb-b529-4ed6-bf12-7852ed47ee0e); Time taken: 0.0 seconds
+INFO  : OK
++--------------------+
+| dim_base.base_num  |
++--------------------+
+| B03404             |
+| B03406             |
+| B00887             |
+| B02026             |
+| B03380             |
+| B03153             |
+| B01312             |
++--------------------+
+7 rows selected (0.32 seconds)
+INFO  : Compiling command(queryId=hive_20250520014229_054957e7-2a59-4a85-abfd-3191d607b175): SELECT * FROM dim_location LIMIT 10
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:dim_location.location_id, type:int, comment:null), FieldSchema(name:dim_location.zone, type:string, comment:null), FieldSchema(name:dim_location.borough, type:string, comment:null), FieldSchema(name:dim_location.service_zone, type:string, comment:null)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250520014229_054957e7-2a59-4a85-abfd-3191d607b175 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+    Fetch Operator
+      limit: 10
+      Processor Tree:
+        TableScan
+          alias: dim_location
+          GatherStats: false
+          Select Operator
+            expressions: location_id (type: int), zone (type: string), borough (type: string), service_zone (type: string)
+            outputColumnNames: _col0, _col1, _col2, _col3
+            Limit
+              Number of rows: 10
+              ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250520014229_054957e7-2a59-4a85-abfd-3191d607b175); Time taken: 0.169 seconds
+INFO  : Executing command(queryId=hive_20250520014229_054957e7-2a59-4a85-abfd-3191d607b175): SELECT * FROM dim_location LIMIT 10
+INFO  : Completed executing command(queryId=hive_20250520014229_054957e7-2a59-4a85-abfd-3191d607b175); Time taken: 0.0 seconds
+INFO  : OK
++---------------------------+--------------------------+-----------------------+----------------------------+
+| dim_location.location_id  |    dim_location.zone     | dim_location.borough  | dim_location.service_zone  |
++---------------------------+--------------------------+-----------------------+----------------------------+
+| 1                         | Newark Airport           | EWR                   | EWR                        |
+| 2                         | Jamaica Bay              | Queens                | Boro Zone                  |
+| 3                         | Allerton/Pelham Gardens  | Bronx                 | Boro Zone                  |
+| 4                         | Alphabet City            | Manhattan             | Yellow Zone                |
+| 5                         | Arden Heights            | Staten Island         | Boro Zone                  |
+| 6                         | Arrochar/Fort Wadsworth  | Staten Island         | Boro Zone                  |
+| 7                         | Astoria                  | Queens                | Boro Zone                  |
+| 8                         | Astoria Park             | Queens                | Boro Zone                  |
+| 9                         | Auburndale               | Queens                | Boro Zone                  |
+| 10                        | Baisley Park             | Queens                | Boro Zone                  |
++---------------------------+--------------------------+-----------------------+----------------------------+
+10 rows selected (0.205 seconds)
+INFO  : Compiling command(queryId=hive_20250520014229_682c261f-2e50-479d-8bbf-07b6dbe4f582): SELECT * FROM dim_calendar LIMIT 10
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:dim_calendar.date_key, type:bigint, comment:null), FieldSchema(name:dim_calendar.year, type:int, comment:null), FieldSchema(name:dim_calendar.quarter, type:int, comment:null), FieldSchema(name:dim_calendar.month, type:int, comment:null), FieldSchema(name:dim_calendar.day, type:int, comment:null), FieldSchema(name:dim_calendar.day_of_week, type:int, comment:null), FieldSchema(name:dim_calendar.is_weekend, type:boolean, comment:null)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250520014229_682c261f-2e50-479d-8bbf-07b6dbe4f582 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+    Fetch Operator
+      limit: 10
+      Processor Tree:
+        TableScan
+          alias: dim_calendar
+          GatherStats: false
+          Select Operator
+            expressions: date_key (type: bigint), year (type: int), quarter (type: int), month (type: int), day (type: int), day_of_week (type: int), is_weekend (type: boolean)
+            outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6
+            Limit
+              Number of rows: 10
+              ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250520014229_682c261f-2e50-479d-8bbf-07b6dbe4f582); Time taken: 0.175 seconds
+INFO  : Executing command(queryId=hive_20250520014229_682c261f-2e50-479d-8bbf-07b6dbe4f582): SELECT * FROM dim_calendar LIMIT 10
+INFO  : Completed executing command(queryId=hive_20250520014229_682c261f-2e50-479d-8bbf-07b6dbe4f582); Time taken: 0.0 seconds
+INFO  : OK
++------------------------+--------------------+-----------------------+---------------------+-------------------+---------------------------+--------------------------+
+| dim_calendar.date_key  | dim_calendar.year  | dim_calendar.quarter  | dim_calendar.month  | dim_calendar.day  | dim_calendar.day_of_week  | dim_calendar.is_weekend  |
++------------------------+--------------------+-----------------------+---------------------+-------------------+---------------------------+--------------------------+
+| 1704574800000          | 2024               | 1                     | 1                   | 7                 | 1                         | true                     |
+| 1705957200000          | 2024               | 1                     | 1                   | 23                | 3                         | false                    |
+| 1704920400000          | 2024               | 1                     | 1                   | 11                | 5                         | false                    |
+| 1705006800000          | 2024               | 1                     | 1                   | 12                | 6                         | false                    |
+| 1705438800000          | 2024               | 1                     | 1                   | 17                | 4                         | false                    |
+| 1706562000000          | 2024               | 1                     | 1                   | 30                | 3                         | false                    |
+| 1705179600000          | 2024               | 1                     | 1                   | 14                | 1                         | true                     |
+| 1704142800000          | 2024               | 1                     | 1                   | 2                 | 3                         | false                    |
+| 1706734800000          | 2024               | 1                     | 2                   | 1                 | 5                         | false                    |
+| 1704229200000          | 2024               | 1                     | 1                   | 3                 | 4                         | false                    |
++------------------------+--------------------+-----------------------+---------------------+-------------------+---------------------------+--------------------------+
+10 rows selected (0.224 seconds)
+INFO  : Compiling command(queryId=hive_20250520014229_ab26917c-ef98-444c-b391-6d85a5daf3dd): SELECT * FROM fact_fhv_trips LIMIT 10
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:fact_fhv_trips.hvfhs_license_num, type:string, comment:null), FieldSchema(name:fact_fhv_trips.dispatching_base_num, type:string, comment:null), FieldSchema(name:fact_fhv_trips.originating_base_num, type:string, comment:null), FieldSchema(name:fact_fhv_trips.request_datetime, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips.on_scene_datetime, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips.pickup_datetime, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips.dropoff_datetime, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips.pu_location_id, type:int, comment:null), FieldSchema(name:fact_fhv_trips.do_location_id, type:int, comment:null), FieldSchema(name:fact_fhv_trips.trip_miles, type:double, comment:null), FieldSchema(name:fact_fhv_trips.trip_time, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips.base_passenger_fare, type:double, comment:null), FieldSchema(name:fact_fhv_trips.tolls, type:double, comment:null), FieldSchema(name:fact_fhv_trips.bcf, type:double, comment:null), FieldSchema(name:fact_fhv_trips.sales_tax, type:double, comment:null), FieldSchema(name:fact_fhv_trips.congestion_surcharge, type:double, comment:null), FieldSchema(name:fact_fhv_trips.airport_fee, type:double, comment:null), FieldSchema(name:fact_fhv_trips.tips, type:double, comment:null), FieldSchema(name:fact_fhv_trips.driver_pay, type:double, comment:null), FieldSchema(name:fact_fhv_trips.shared_request_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips.shared_match_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips.access_a_ride_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips.wav_request_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips.wav_match_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips.___index_level_0__, type:bigint, comment:null)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250520014229_ab26917c-ef98-444c-b391-6d85a5daf3dd : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+    Fetch Operator
+      limit: 10
+      Processor Tree:
+        TableScan
+          alias: fact_fhv_trips
+          GatherStats: false
+          Select Operator
+            expressions: hvfhs_license_num (type: string), dispatching_base_num (type: string), originating_base_num (type: string), request_datetime (type: bigint), on_scene_datetime (type: bigint), pickup_datetime (type: bigint), dropoff_datetime (type: bigint), pu_location_id (type: int), do_location_id (type: int), trip_miles (type: double), trip_time (type: bigint), base_passenger_fare (type: double), tolls (type: double), bcf (type: double), sales_tax (type: double), congestion_surcharge (type: double), airport_fee (type: double), tips (type: double), driver_pay (type: double), shared_request_flag (type: string), shared_match_flag (type: string), access_a_ride_flag (type: string), wav_request_flag (type: string), wav_match_flag (type: string), ___index_level_0__ (type: bigint)
+            outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18, _col19, _col20, _col21, _col22, _col23, _col24
+            Limit
+              Number of rows: 10
+              ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250520014229_ab26917c-ef98-444c-b391-6d85a5daf3dd); Time taken: 0.166 seconds
+INFO  : Executing command(queryId=hive_20250520014229_ab26917c-ef98-444c-b391-6d85a5daf3dd): SELECT * FROM fact_fhv_trips LIMIT 10
+INFO  : Completed executing command(queryId=hive_20250520014229_ab26917c-ef98-444c-b391-6d85a5daf3dd); Time taken: 0.0 seconds
+INFO  : OK
++-----------------------------------+--------------------------------------+--------------------------------------+----------------------------------+-----------------------------------+---------------------------------+----------------------------------+--------------------------------+--------------------------------+----------------------------+---------------------------+-------------------------------------+-----------------------+---------------------+---------------------------+--------------------------------------+-----------------------------+----------------------+----------------------------+-------------------------------------+-----------------------------------+------------------------------------+----------------------------------+--------------------------------+------------------------------------+
+| fact_fhv_trips.hvfhs_license_num  | fact_fhv_trips.dispatching_base_num  | fact_fhv_trips.originating_base_num  | fact_fhv_trips.request_datetime  | fact_fhv_trips.on_scene_datetime  | fact_fhv_trips.pickup_datetime  | fact_fhv_trips.dropoff_datetime  | fact_fhv_trips.pu_location_id  | fact_fhv_trips.do_location_id  | fact_fhv_trips.trip_miles  | fact_fhv_trips.trip_time  | fact_fhv_trips.base_passenger_fare  | fact_fhv_trips.tolls  | fact_fhv_trips.bcf  | fact_fhv_trips.sales_tax  | fact_fhv_trips.congestion_surcharge  | fact_fhv_trips.airport_fee  | fact_fhv_trips.tips  | fact_fhv_trips.driver_pay  | fact_fhv_trips.shared_request_flag  | fact_fhv_trips.shared_match_flag  | fact_fhv_trips.access_a_ride_flag  | fact_fhv_trips.wav_request_flag  | fact_fhv_trips.wav_match_flag  | fact_fhv_trips.___index_level_0__  |
++-----------------------------------+--------------------------------------+--------------------------------------+----------------------------------+-----------------------------------+---------------------------------+----------------------------------+--------------------------------+--------------------------------+----------------------------+---------------------------+-------------------------------------+-----------------------+---------------------+---------------------------+--------------------------------------+-----------------------------+----------------------+----------------------------+-------------------------------------+-----------------------------------+------------------------------------+----------------------------------+--------------------------------+------------------------------------+
+| HV0003                            | B03404                               | B03404                               | 1727502237000                    | 1727502541000                     | 1727502665000                   | 1727504957000                    | 89                             | 75                             | 15.69                      | 2292                      | 45.86                               | 6.94                  | 1.33                | 4.89                      | 2.75                                 | 0.0                         | 0.0                  | 43.61                      | N                                   | N                                 | N                                  | N                                | N                              | 17249686                           |
+| HV0003                            | B03404                               | B03404                               | 1727564220000                    | 1727564340000                     | 1727564379000                   | 1727565238000                    | 75                             | 247                            | 3.19                       | 859                       | 25.75                               | 0.0                   | 0.7                 | 2.29                      | 0.0                                  | 0.0                         | 0.0                  | 24.54                      | N                                   | N                                 | N                                  | N                                | N                              | 17879520                           |
+| HV0003                            | B03404                               | B03404                               | 1727493456000                    | 1727493472000                     | 1727493510000                   | 1727494441000                    | 66                             | 227                            | 6.09                       | 931                       | 26.83                               | 0.0                   | 0.74                | 2.38                      | 0.0                                  | 0.0                         | 5.99                 | 19.8                       | N                                   | N                                 | N                                  | N                                | N                              | 17216602                           |
+| HV0003                            | B03404                               | B03404                               | 1727514616000                    | 1727514811000                     | 1727514817000                   | 1727515869000                    | 143                            | 162                            | 2.83                       | 1052                      | 20.77                               | 0.0                   | 0.57                | 1.85                      | 2.75                                 | 0.0                         | 0.0                  | 14.07                      | N                                   | N                                 | N                                  | N                                | N                              | 17317103                           |
+| HV0003                            | B03404                               | B03404                               | 1727502762000                    | 1727503044000                     | 1727503055000                   | 1727503288000                    | 188                            | 188                            | 0.75                       | 233                       | 9.86                                | 0.0                   | 0.27                | 0.87                      | 0.0                                  | 0.0                         | 0.0                  | 5.39                       | N                                   | N                                 | N                                  | N                                | N                              | 17243274                           |
+| HV0003                            | B03404                               | B03404                               | 1727488082000                    | 1727488390000                     | 1727488402000                   | 1727489195000                    | 164                            | 79                             | 2.36                       | 793                       | 18.05                               | 0.0                   | 0.49                | 1.6                       | 2.75                                 | 0.0                         | 0.0                  | 10.92                      | N                                   | N                                 | N                                  | N                                | N                              | 17162342                           |
+| HV0003                            | B03404                               | B03404                               | 1727530696000                    | 1727530791000                     | 1727530912000                   | 1727535277000                    | 21                             | 265                            | 22.66                      | 4365                      | 83.94                               | 33.88                 | 2.31                | 0.0                       | 0.0                                  | 0.0                         | 0.0                  | 78.86                      | N                                   | N                                 | N                                  | N                                | N                              | 17489267                           |
+| HV0003                            | B03404                               | B03404                               | 1727545040000                    | 1727545204000                     | 1727545204000                   | 1727545839000                    | 211                            | 114                            | 0.72                       | 635                       | 16.49                               | 0.0                   | 0.45                | 1.46                      | 2.75                                 | 0.0                         | 0.0                  | 9.31                       | N                                   | N                                 | N                                  | N                                | N                              | 17638493                           |
+| HV0003                            | B03404                               | B03404                               | 1727551329000                    | 1727551517000                     | 1727551577000                   | 1727553032000                    | 260                            | 179                            | 3.05                       | 1455                      | 23.02                               | 0.0                   | 0.63                | 2.03                      | 0.0                                  | 0.0                         | 0.0                  | 18.29                      | N                                   | N                                 | N                                  | N                                | N                              | 17751015                           |
+| HV0003                            | B03404                               | B03404                               | 1727558745000                    | 1727558894000                     | 1727558899000                   | 1727559701000                    | 52                             | 189                            | 2.05                       | 802                       | 19.55                               | 0.0                   | 0.53                | 1.73                      | 0.0                                  | 0.0                         | 3.27                 | 12.08                      | N                                   | N                                 | N                                  | N                                | N                              | 17845721                           |
++-----------------------------------+--------------------------------------+--------------------------------------+----------------------------------+-----------------------------------+---------------------------------+----------------------------------+--------------------------------+--------------------------------+----------------------------+---------------------------+-------------------------------------+-----------------------+---------------------+---------------------------+--------------------------------------+-----------------------------+----------------------+----------------------------+-------------------------------------+-----------------------------------+------------------------------------+----------------------------------+--------------------------------+------------------------------------+
+10 rows selected (0.236 seconds)
+INFO  : Compiling command(queryId=hive_20250520014230_1237f82c-24cc-4a77-8e41-5685d7ca21b9): SELECT * FROM fact_fhv_trips_part WHERE month=1 LIMIT 10
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:fact_fhv_trips_part.hvfhs_license_num, type:string, comment:null), FieldSchema(name:fact_fhv_trips_part.dispatching_base_num, type:string, comment:null), FieldSchema(name:fact_fhv_trips_part.originating_base_num, type:string, comment:null), FieldSchema(name:fact_fhv_trips_part.request_datetime, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips_part.on_scene_datetime, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips_part.pickup_datetime, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips_part.dropoff_datetime, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips_part.pu_location_id, type:int, comment:null), FieldSchema(name:fact_fhv_trips_part.do_location_id, type:int, comment:null), FieldSchema(name:fact_fhv_trips_part.trip_miles, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.trip_time, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips_part.base_passenger_fare, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.tolls, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.bcf, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.sales_tax, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.congestion_surcharge, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.airport_fee, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.tips, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.driver_pay, type:double, comment:null), FieldSchema(name:fact_fhv_trips_part.shared_request_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips_part.shared_match_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips_part.access_a_ride_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips_part.wav_request_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips_part.wav_match_flag, type:string, comment:null), FieldSchema(name:fact_fhv_trips_part.index_level_0, type:bigint, comment:null), FieldSchema(name:fact_fhv_trips_part.month, type:int, comment:null)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250520014230_1237f82c-24cc-4a77-8e41-5685d7ca21b9 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [FETCH]
+
+STAGE PLANS:
+  Stage: Stage-0
+    Fetch Operator
+      limit: 10
+      Partition Description:
+          Partition
+            input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+            output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+            partition values:
+              month 1
+            properties:
+              COLUMN_STATS_ACCURATE {"BASIC_STATS":"true","COLUMN_STATS":{"access_a_ride_flag":"true","airport_fee":"true","base_passenger_fare":"true","bcf":"true","congestion_surcharge":"true","dispatching_base_num":"true","do_location_id":"true","driver_pay":"true","dropoff_datetime":"true","hvfhs_license_num":"true","index_level_0":"true","on_scene_datetime":"true","originating_base_num":"true","pickup_datetime":"true","pu_location_id":"true","request_datetime":"true","sales_tax":"true","shared_match_flag":"true","shared_request_flag":"true","tips":"true","tolls":"true","trip_miles":"true","trip_time":"true","wav_match_flag":"true","wav_request_flag":"true"}}
+              bucket_count 32
+              bucket_field_name pu_location_id
+              column.name.delimiter ,
+              columns hvfhs_license_num,dispatching_base_num,originating_base_num,request_datetime,on_scene_datetime,pickup_datetime,dropoff_datetime,pu_location_id,do_location_id,trip_miles,trip_time,base_passenger_fare,tolls,bcf,sales_tax,congestion_surcharge,airport_fee,tips,driver_pay,shared_request_flag,shared_match_flag,access_a_ride_flag,wav_request_flag,wav_match_flag,index_level_0
+              columns.comments 
+              columns.types string:string:string:bigint:bigint:bigint:bigint:int:int:double:bigint:double:double:double:double:double:double:double:double:string:string:string:string:string:bigint
+              file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+              file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+              location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part/month=1
+              name team6_projectdb.fact_fhv_trips_part
+              numFiles 32
+              numRows 1003883
+              partition_columns month
+              partition_columns.types int
+              rawDataSize 0
+              serialization.ddl struct fact_fhv_trips_part { string hvfhs_license_num, string dispatching_base_num, string originating_base_num, i64 request_datetime, i64 on_scene_datetime, i64 pickup_datetime, i64 dropoff_datetime, i32 pu_location_id, i32 do_location_id, double trip_miles, i64 trip_time, double base_passenger_fare, double tolls, double bcf, double sales_tax, double congestion_surcharge, double airport_fee, double tips, double driver_pay, string shared_request_flag, string shared_match_flag, string access_a_ride_flag, string wav_request_flag, string wav_match_flag, i64 index_level_0}
+              serialization.format 1
+              serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+              totalSize 162296557
+              transient_lastDdlTime 1747694546
+            serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+          
+              input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+              output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+              properties:
+                AVRO.COMPRESS SNAPPY
+                EXTERNAL TRUE
+                bucket_count 32
+                bucket_field_name pu_location_id
+                bucketing_version 2
+                column.name.delimiter ,
+                columns hvfhs_license_num,dispatching_base_num,originating_base_num,request_datetime,on_scene_datetime,pickup_datetime,dropoff_datetime,pu_location_id,do_location_id,trip_miles,trip_time,base_passenger_fare,tolls,bcf,sales_tax,congestion_surcharge,airport_fee,tips,driver_pay,shared_request_flag,shared_match_flag,access_a_ride_flag,wav_request_flag,wav_match_flag,index_level_0
+                columns.comments 
+                columns.types string:string:string:bigint:bigint:bigint:bigint:int:int:double:bigint:double:double:double:double:double:double:double:double:string:string:string:string:string:bigint
+                file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part
+                name team6_projectdb.fact_fhv_trips_part
+                partition_columns month
+                partition_columns.types int
+                serialization.ddl struct fact_fhv_trips_part { string hvfhs_license_num, string dispatching_base_num, string originating_base_num, i64 request_datetime, i64 on_scene_datetime, i64 pickup_datetime, i64 dropoff_datetime, i32 pu_location_id, i32 do_location_id, double trip_miles, i64 trip_time, double base_passenger_fare, double tolls, double bcf, double sales_tax, double congestion_surcharge, double airport_fee, double tips, double driver_pay, string shared_request_flag, string shared_match_flag, string access_a_ride_flag, string wav_request_flag, string wav_match_flag, i64 index_level_0}
+                serialization.format 1
+                serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                transient_lastDdlTime 1747694198
+              serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+              name: team6_projectdb.fact_fhv_trips_part
+            name: team6_projectdb.fact_fhv_trips_part
+      Processor Tree:
+        TableScan
+          alias: fact_fhv_trips_part
+          GatherStats: false
+          Select Operator
+            expressions: hvfhs_license_num (type: string), dispatching_base_num (type: string), originating_base_num (type: string), request_datetime (type: bigint), on_scene_datetime (type: bigint), pickup_datetime (type: bigint), dropoff_datetime (type: bigint), pu_location_id (type: int), do_location_id (type: int), trip_miles (type: double), trip_time (type: bigint), base_passenger_fare (type: double), tolls (type: double), bcf (type: double), sales_tax (type: double), congestion_surcharge (type: double), airport_fee (type: double), tips (type: double), driver_pay (type: double), shared_request_flag (type: string), shared_match_flag (type: string), access_a_ride_flag (type: string), wav_request_flag (type: string), wav_match_flag (type: string), index_level_0 (type: bigint), 1 (type: int)
+            outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18, _col19, _col20, _col21, _col22, _col23, _col24, _col25
+            Limit
+              Number of rows: 10
+              ListSink
+
+
+INFO  : Completed compiling command(queryId=hive_20250520014230_1237f82c-24cc-4a77-8e41-5685d7ca21b9); Time taken: 0.187 seconds
+INFO  : Executing command(queryId=hive_20250520014230_1237f82c-24cc-4a77-8e41-5685d7ca21b9): SELECT * FROM fact_fhv_trips_part WHERE month=1 LIMIT 10
+INFO  : Completed executing command(queryId=hive_20250520014230_1237f82c-24cc-4a77-8e41-5685d7ca21b9); Time taken: 0.0 seconds
+INFO  : OK
++----------------------------------------+-------------------------------------------+-------------------------------------------+---------------------------------------+----------------------------------------+--------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------+---------------------------------+--------------------------------+------------------------------------------+----------------------------+--------------------------+--------------------------------+-------------------------------------------+----------------------------------+---------------------------+---------------------------------+------------------------------------------+----------------------------------------+-----------------------------------------+---------------------------------------+-------------------------------------+------------------------------------+----------------------------+
+| fact_fhv_trips_part.hvfhs_license_num  | fact_fhv_trips_part.dispatching_base_num  | fact_fhv_trips_part.originating_base_num  | fact_fhv_trips_part.request_datetime  | fact_fhv_trips_part.on_scene_datetime  | fact_fhv_trips_part.pickup_datetime  | fact_fhv_trips_part.dropoff_datetime  | fact_fhv_trips_part.pu_location_id  | fact_fhv_trips_part.do_location_id  | fact_fhv_trips_part.trip_miles  | fact_fhv_trips_part.trip_time  | fact_fhv_trips_part.base_passenger_fare  | fact_fhv_trips_part.tolls  | fact_fhv_trips_part.bcf  | fact_fhv_trips_part.sales_tax  | fact_fhv_trips_part.congestion_surcharge  | fact_fhv_trips_part.airport_fee  | fact_fhv_trips_part.tips  | fact_fhv_trips_part.driver_pay  | fact_fhv_trips_part.shared_request_flag  | fact_fhv_trips_part.shared_match_flag  | fact_fhv_trips_part.access_a_ride_flag  | fact_fhv_trips_part.wav_request_flag  | fact_fhv_trips_part.wav_match_flag  | fact_fhv_trips_part.index_level_0  | fact_fhv_trips_part.month  |
++----------------------------------------+-------------------------------------------+-------------------------------------------+---------------------------------------+----------------------------------------+--------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------+---------------------------------+--------------------------------+------------------------------------------+----------------------------+--------------------------+--------------------------------+-------------------------------------------+----------------------------------+---------------------------+---------------------------------+------------------------------------------+----------------------------------------+-----------------------------------------+---------------------------------------+-------------------------------------+------------------------------------+----------------------------+
+| HV0003                                 | B03404                                    | B03404                                    | 1705559203000                         | 1705559390000                          | 1705559510000                        | 1705560461000                         | 113                                 | 162                                 | 3.05                            | 951                            | 21.33                                    | 0.0                        | 0.59                     | 1.89                           | 2.75                                      | 0.0                              | 0.0                       | 13.09                           | N                                        | N                                      | N                                       | N                                     | N                                   | 10448486                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705591954000                         | 1705592088000                          | 1705592208000                        | 1705596504000                         | 119                                 | 265                                 | 48.09                           | 4296                           | 123.43                                   | 20.0                       | 3.94                     | 12.73                          | 0.0                                       | 0.0                              | 0.0                       | 118.57                          | N                                        | N                                      | N                                       | N                                     | N                                   | 10754094                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705562664000                         | 1705562949000                          | 1705563070000                        | 1705564618000                         | 113                                 | 138                                 | 10.66                           | 1548                           | 51.45                                    | 6.94                       | 1.67                     | 5.4                            | 2.75                                      | 2.5                              | 14.14                     | 28.56                           | N                                        | N                                      | N                                       | N                                     | N                                   | 10472427                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705577433000                         | 1705577710000                          | 1705577710000                        | 1705579394000                         | 119                                 | 265                                 | 18.34                           | 1684                           | 52.77                                    | 0.0                        | 1.45                     | 4.68                           | 0.0                                       | 0.0                              | 5.0                       | 45.56                           | N                                        | N                                      | N                                       | N                                     | N                                   | 10640054                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705547024000                         | 1705547175000                          | 1705547281000                        | 1705547747000                         | 113                                 | 158                                 | 1.2                             | 466                            | 8.21                                     | 0.0                        | 0.23                     | 0.73                           | 2.75                                      | 0.0                              | 0.0                       | 5.96                            | N                                        | N                                      | N                                       | N                                     | N                                   | 10422708                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705606603000                         | 1705606692000                          | 1705607040000                        | 1705607490000                         | 113                                 | 114                                 | 1.04                            | 450                            | 9.4                                      | 0.0                        | 0.26                     | 0.83                           | 2.75                                      | 0.0                              | 0.0                       | 5.6                             | N                                        | N                                      | N                                       | N                                     | N                                   | 10919413                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705599171000                         | 1705599523000                          | 1705599537000                        | 1705600146000                         | 113                                 | 211                                 | 1.49                            | 609                            | 15.43                                    | 0.0                        | 0.42                     | 1.37                           | 2.75                                      | 0.0                              | 0.0                       | 7.68                            | N                                        | N                                      | N                                       | N                                     | N                                   | 10844224                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705606943000                         | 1705607206000                          | 1705607238000                        | 1705609363000                         | 113                                 | 151                                 | 6.32                            | 2125                           | 35.08                                    | 0.0                        | 0.96                     | 3.11                           | 2.75                                      | 0.0                              | 0.0                       | 29.28                           | N                                        | N                                      | N                                       | N                                     | N                                   | 10921514                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705592799000                         | 1705592909000                          | 1705592909000                        | 1705593226000                         | 70                                  | 138                                 | 1.56                            | 317                            | 8.2                                      | 0.0                        | 0.26                     | 0.84                           | 0.0                                       | 1.25                             | 0.0                       | 5.4                             | Y                                        | N                                      | N                                       | N                                     | N                                   | 10768093                           | 1                          |
+| HV0003                                 | B03404                                    | B03404                                    | 1705599243000                         | 1705599390000                          | 1705599419000                        | 1705599819000                         | 134                                 | 197                                 | 1.19                            | 400                            | 9.69                                     | 0.0                        | 0.27                     | 0.86                           | 0.0                                       | 0.0                              | 0.0                       | 5.4                             | N                                        | N                                      | N                                       | N                                     | N                                   | 10837140                           | 1                          |
++----------------------------------------+-------------------------------------------+-------------------------------------------+---------------------------------------+----------------------------------------+--------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------+---------------------------------+--------------------------------+------------------------------------------+----------------------------+--------------------------+--------------------------------+-------------------------------------------+----------------------------------+---------------------------+---------------------------------+------------------------------------------+----------------------------------------+-----------------------------------------+---------------------------------------+-------------------------------------+------------------------------------+----------------------------+
+10 rows selected (0.229 seconds)
+Beeline version 2.3.9 by Apache Hive
+Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001/team6_projectdb

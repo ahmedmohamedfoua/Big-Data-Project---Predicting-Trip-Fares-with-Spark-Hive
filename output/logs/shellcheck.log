@@ -1,0 +1,132 @@
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+
+In ./stage2.sh line 12:
+HDFS_BASE="/user/team6/project/output"
+^-------^ SC2034 (warning): HDFS_BASE appears unused. Verify use (or export if used externally).
+
+
+In ./stage2.sh line 15:
+QUERIES_DIR="/home/team6/project/my-big-data-project-2025/hive/queries"
+^---------^ SC2034 (warning): QUERIES_DIR appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- HDFS_BASE appears unused. Verify ...
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+
+In ./stage2.sh line 12:
+HDFS_BASE="/user/team6/project/output"
+^-------^ SC2034 (warning): HDFS_BASE appears unused. Verify use (or export if used externally).
+
+
+In ./stage2.sh line 15:
+QUERIES_DIR="/home/team6/project/my-big-data-project-2025/hive/queries"
+^---------^ SC2034 (warning): QUERIES_DIR appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- HDFS_BASE appears unused. Verify ...
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+
+In ./stage2.sh line 12:
+HDFS_BASE="/user/team6/project/output"
+^-------^ SC2034 (warning): HDFS_BASE appears unused. Verify use (or export if used externally).
+
+
+In ./stage2.sh line 15:
+QUERIES_DIR="/home/team6/project/my-big-data-project-2025/hive/queries"
+^---------^ SC2034 (warning): QUERIES_DIR appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- HDFS_BASE appears unused. Verify ...
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+
+In ./stage2.sh line 12:
+HDFS_BASE="/user/team6/project/output"
+^-------^ SC2034 (warning): HDFS_BASE appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- HDFS_BASE appears unused. Verify ...
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+
+In ./stage2.sh line 12:
+HDFS_BASE="/user/team6/project/output"
+^-------^ SC2034 (warning): HDFS_BASE appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- HDFS_BASE appears unused. Verify ...
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+
+In ./stage2.sh line 12:
+HDFS_BASE="/user/team6/project/output"
+^-------^ SC2034 (warning): HDFS_BASE appears unused. Verify use (or export if used externally).
+
+
+In ./stage2.sh line 15:
+QUERIES_DIR="/home/team6/project/my-big-data-project-2025/hive/queries"
+^---------^ SC2034 (warning): QUERIES_DIR appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- HDFS_BASE appears unused. Verify ...
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+
+In ./stage2.sh line 12:
+HDFS_BASE="/user/team6/project/output"
+^-------^ SC2034 (warning): HDFS_BASE appears unused. Verify use (or export if used externally).
+
+
+In ./stage2.sh line 15:
+QUERIES_DIR="/home/team6/project/my-big-data-project-2025/hive/queries"
+^---------^ SC2034 (warning): QUERIES_DIR appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- HDFS_BASE appears unused. Verify ...
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+
+In ./stage2.sh line 12:
+HDFS_BASE="/user/team6/project/output"
+^-------^ SC2034 (warning): HDFS_BASE appears unused. Verify use (or export if used externally).
+
+
+In ./stage2.sh line 15:
+QUERIES_DIR="/home/team6/project/my-big-data-project-2025/hive/queries"
+^---------^ SC2034 (warning): QUERIES_DIR appears unused. Verify use (or export if used externally).
+
+For more information:
+  https://www.shellcheck.net/wiki/SC2034 -- HDFS_BASE appears unused. Verify ...
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.
+Current PATH: /home/team6/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+shellcheck location: /home/team6/bin/shellcheck
+Shellcheck passed: no issues found.

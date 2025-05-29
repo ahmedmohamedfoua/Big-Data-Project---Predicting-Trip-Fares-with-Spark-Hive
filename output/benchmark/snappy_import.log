@@ -1,0 +1,79 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/lib/hadoop/lib/slf4j-reload4j-1.7.35.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/lib/sqoop/lib/slf4j-reload4j-1.7.35.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Reload4jLoggerFactory]
+2025-05-03 19:23:23,313 (main) [INFO - org.apache.sqoop.Sqoop.<init>(Sqoop.java:94)] Running Sqoop version: 1.4.7_arenadata2
+2025-05-03 19:23:23,374 (main) [WARN - org.apache.sqoop.tool.BaseSqoopTool.applyCredentialsOptions(BaseSqoopTool.java:1153)] Setting your password on the command-line is insecure. Consider using -P instead.
+2025-05-03 19:23:23,448 (main) [INFO - org.apache.sqoop.manager.SqlManager.initOptionDefaults(SqlManager.java:98)] Using default fetchSize of 1000
+2025-05-03 19:23:23,449 (main) [INFO - org.apache.sqoop.tool.CodeGenTool.generateORM(CodeGenTool.java:91)] Beginning code generation
+2025-05-03 19:23:23,746 (main) [INFO - org.apache.sqoop.manager.SqlManager.execute(SqlManager.java:776)] Executing SQL statement: SELECT t.* FROM "fact_fhv_trips" AS t LIMIT 1
+2025-05-03 19:23:23,809 (main) [INFO - org.apache.sqoop.orm.CompilationManager.findHadoopJars(CompilationManager.java:100)] HADOOP_MAPRED_HOME is /usr/lib/hadoop-mapreduce
+2025-05-03 19:23:25,147 (main) [INFO - org.apache.sqoop.orm.CompilationManager.jar(CompilationManager.java:362)] Writing jar file: /tmp/sqoop-team6/compile/0c206e466732dc982022316a92eadaa8/fact_fhv_trips.jar
+2025-05-03 19:23:25,162 (main) [WARN - org.apache.sqoop.manager.PostgresqlManager.importTable(PostgresqlManager.java:118)] It looks like you are importing from postgresql.
+2025-05-03 19:23:25,162 (main) [WARN - org.apache.sqoop.manager.PostgresqlManager.importTable(PostgresqlManager.java:119)] This transfer can be faster! Use the --direct
+2025-05-03 19:23:25,162 (main) [WARN - org.apache.sqoop.manager.PostgresqlManager.importTable(PostgresqlManager.java:120)] option to exercise a postgresql-specific fast path.
+2025-05-03 19:23:25,169 (main) [INFO - org.apache.sqoop.mapreduce.ImportJobBase.runImport(ImportJobBase.java:241)] Beginning import of fact_fhv_trips
+2025-05-03 19:23:25,169 (main) [INFO - org.apache.hadoop.conf.Configuration.logDeprecation(Configuration.java:1395)] mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+2025-05-03 19:23:25,267 (main) [INFO - org.apache.hadoop.conf.Configuration.logDeprecation(Configuration.java:1395)] mapred.jar is deprecated. Instead, use mapreduce.job.jar
+2025-05-03 19:23:25,806 (main) [INFO - org.apache.sqoop.manager.SqlManager.execute(SqlManager.java:776)] Executing SQL statement: SELECT t.* FROM "fact_fhv_trips" AS t LIMIT 1
+2025-05-03 19:23:25,809 (main) [INFO - org.apache.sqoop.manager.SqlManager.execute(SqlManager.java:776)] Executing SQL statement: SELECT t.* FROM "fact_fhv_trips" AS t LIMIT 1
+2025-05-03 19:23:25,948 (main) [INFO - org.apache.sqoop.mapreduce.DataDrivenImportJob.writeAvroSchema(DataDrivenImportJob.java:138)] Writing Avro schema file: /tmp/sqoop-team6/compile/0c206e466732dc982022316a92eadaa8/fact_fhv_trips.avsc
+2025-05-03 19:23:26,005 (main) [INFO - org.apache.hadoop.conf.Configuration.logDeprecation(Configuration.java:1395)] mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+2025-05-03 19:23:26,319 (main) [INFO - org.apache.hadoop.yarn.client.RMProxy.newProxyInstance(RMProxy.java:134)] Connecting to ResourceManager at hadoop-03.uni.innopolis.ru/10.100.30.59:8032
+2025-05-03 19:23:26,463 (main) [INFO - org.apache.hadoop.yarn.client.AHSProxy.createAHSProxy(AHSProxy.java:42)] Connecting to Application History server at hadoop-04.uni.innopolis.ru/10.100.30.60:10200
+2025-05-03 19:23:26,643 (main) [INFO - org.apache.hadoop.mapreduce.JobResourceUploader.disableErasureCodingForPath(JobResourceUploader.java:906)] Disabling Erasure Coding for path: /user/team6/.staging/job_1745788519616_1762
+2025-05-03 19:23:27,909 (main) [INFO - org.apache.sqoop.mapreduce.db.DBInputFormat.setTxIsolation(DBInputFormat.java:192)] Using read commited transaction isolation
+2025-05-03 19:23:27,962 (main) [INFO - org.apache.hadoop.mapreduce.JobSubmitter.submitJobInternal(JobSubmitter.java:202)] number of splits:1
+2025-05-03 19:23:28,089 (main) [INFO - org.apache.hadoop.mapreduce.JobSubmitter.printTokens(JobSubmitter.java:298)] Submitting tokens for job: job_1745788519616_1762
+2025-05-03 19:23:28,091 (main) [INFO - org.apache.hadoop.mapreduce.JobSubmitter.printTokens(JobSubmitter.java:299)] Executing with tokens: []
+2025-05-03 19:23:28,284 (main) [INFO - org.apache.hadoop.conf.Configuration.getConfResourceAsInputStream(Configuration.java:2793)] resource-types.xml not found
+2025-05-03 19:23:28,285 (main) [INFO - org.apache.hadoop.yarn.util.resource.ResourceUtils.addResourcesFileToConf(ResourceUtils.java:442)] Unable to find 'resource-types.xml'.
+2025-05-03 19:23:28,349 (main) [INFO - org.apache.hadoop.yarn.client.api.impl.YarnClientImpl.submitApplication(YarnClientImpl.java:329)] Submitted application application_1745788519616_1762
+2025-05-03 19:23:28,386 (main) [INFO - org.apache.hadoop.mapreduce.Job.submit(Job.java:1569)] The url to track the job: http://hadoop-03.uni.innopolis.ru:8088/proxy/application_1745788519616_1762/
+2025-05-03 19:23:28,386 (main) [INFO - org.apache.hadoop.mapreduce.Job.monitorAndPrintJob(Job.java:1614)] Running job: job_1745788519616_1762
+2025-05-03 19:23:33,467 (main) [INFO - org.apache.hadoop.mapreduce.Job.monitorAndPrintJob(Job.java:1635)] Job job_1745788519616_1762 running in uber mode : false
+2025-05-03 19:23:33,469 (main) [INFO - org.apache.hadoop.mapreduce.Job.monitorAndPrintJob(Job.java:1642)]  map 0% reduce 0%
+2025-05-03 19:27:27,689 (main) [INFO - org.apache.hadoop.mapreduce.Job.monitorAndPrintJob(Job.java:1642)]  map 100% reduce 0%
+2025-05-03 19:27:27,697 (main) [INFO - org.apache.hadoop.mapreduce.Job.monitorAndPrintJob(Job.java:1653)] Job job_1745788519616_1762 completed successfully
+2025-05-03 19:27:27,781 (main) [INFO - org.apache.hadoop.mapreduce.Job.monitorAndPrintJob(Job.java:1660)] Counters: 33
+	File System Counters
+		FILE: Number of bytes read=0
+		FILE: Number of bytes written=257013
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=85
+		HDFS: Number of bytes written=860009981
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters 
+		Launched map tasks=1
+		Other local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=231927
+		Total time spent by all reduces in occupied slots (ms)=0
+		Total time spent by all map tasks (ms)=231927
+		Total vcore-milliseconds taken by all map tasks=231927
+		Total megabyte-milliseconds taken by all map tasks=237493248
+	Map-Reduce Framework
+		Map input records=12000000
+		Map output records=12000000
+		Input split bytes=85
+		Spilled Records=0
+		Failed Shuffles=0
+		Merged Map outputs=0
+		GC time elapsed (ms)=1498
+		CPU time spent (ms)=231780
+		Physical memory (bytes) snapshot=430133248
+		Virtual memory (bytes) snapshot=2908540928
+		Total committed heap usage (bytes)=702545920
+		Peak Map Physical memory (bytes)=532201472
+		Peak Map Virtual memory (bytes)=2908540928
+	File Input Format Counters 
+		Bytes Read=0
+	File Output Format Counters 
+		Bytes Written=860009981
+2025-05-03 19:27:27,786 (main) [INFO - org.apache.sqoop.mapreduce.ImportJobBase.runJob(ImportJobBase.java:190)] Transferred 820.1694 MB in 241.7678 seconds (3.3924 MB/sec)
+2025-05-03 19:27:27,788 (main) [INFO - org.apache.sqoop.mapreduce.ImportJobBase.runJob(ImportJobBase.java:192)] Retrieved 12000000 records.

@@ -1,0 +1,13 @@
+{
+  "type" : "record",
+  "name" : "dim_base",
+  "doc" : "Sqoop import of dim_base",
+  "fields" : [ {
+    "name" : "base_num",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "base_num",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "dim_base"
+}

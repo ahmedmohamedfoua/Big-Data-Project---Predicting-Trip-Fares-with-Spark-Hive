@@ -1,0 +1,864 @@
+Connecting to jdbc:hive2://hadoop-03.uni.innopolis.ru:10001/team6_projectdb
+2025-05-20 16:28:11,500 INFO jdbc.Utils: Supplied authorities: hadoop-03.uni.innopolis.ru:10001
+2025-05-20 16:28:11,501 INFO jdbc.Utils: Resolved authority: hadoop-03.uni.innopolis.ru:10001
+Connected to: Apache Hive (version 3.1.3)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team6_projectdb;
+INFO  : Compiling command(queryId=hive_20250520162811_b77cae7c-f511-47ea-b73b-a5d983860d53): USE team6_projectdb
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : EXPLAIN output for queryid hive_20250520162811_b77cae7c-f511-47ea-b73b-a5d983860d53 : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+
+STAGE PLANS:
+  Stage: Stage-0
+
+
+INFO  : Completed compiling command(queryId=hive_20250520162811_b77cae7c-f511-47ea-b73b-a5d983860d53); Time taken: 0.056 seconds
+INFO  : Executing command(queryId=hive_20250520162811_b77cae7c-f511-47ea-b73b-a5d983860d53): USE team6_projectdb
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20250520162811_b77cae7c-f511-47ea-b73b-a5d983860d53); Time taken: 0.008 seconds
+INFO  : OK
+No rows affected (0.124 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.dynamic.partition=true;
+No rows affected (0.003 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.exec.dynamic.partition.mode=nonstrict;
+No rows affected (0.002 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SET hive.enforce.bucketing=true;
+No rows affected (0.002 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE IF NOT EXISTS fact_fhv_trips_part (
+. . . . . . . . . . . . . . . . . . . . . . .>     hvfhs_license_num STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     dispatching_base_num STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     originating_base_num STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     request_datetime BIGINT,
+. . . . . . . . . . . . . . . . . . . . . . .>     on_scene_datetime BIGINT,
+. . . . . . . . . . . . . . . . . . . . . . .>     pickup_datetime BIGINT,
+. . . . . . . . . . . . . . . . . . . . . . .>     dropoff_datetime BIGINT,
+. . . . . . . . . . . . . . . . . . . . . . .>     pu_location_id INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     do_location_id INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     trip_miles DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     trip_time BIGINT,
+. . . . . . . . . . . . . . . . . . . . . . .>     base_passenger_fare DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     tolls DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     bcf DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     sales_tax DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     congestion_surcharge DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     airport_fee DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     tips DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     driver_pay DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     shared_request_flag STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     shared_match_flag STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     access_a_ride_flag STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     wav_request_flag STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     wav_match_flag STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     index_level_0 BIGINT
+. . . . . . . . . . . . . . . . . . . . . . .> )
+. . . . . . . . . . . . . . . . . . . . . . .> PARTITIONED BY (
+. . . . . . . . . . . . . . . . . . . . . . .>     month INT
+. . . . . . . . . . . . . . . . . . . . . . .> )
+. . . . . . . . . . . . . . . . . . . . . . .> CLUSTERED BY (pu_location_id) INTO 32 BUCKETS
+. . . . . . . . . . . . . . . . . . . . . . .> STORED AS AVRO
+. . . . . . . . . . . . . . . . . . . . . . .> LOCATION '/user/team6/project/hive/warehouse/fact_fhv_trips_part'
+. . . . . . . . . . . . . . . . . . . . . . .> TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY');
+INFO  : Compiling command(queryId=hive_20250520162812_0fdc0cb3-fed5-437e-820e-f4146490f71c): CREATE EXTERNAL TABLE IF NOT EXISTS fact_fhv_trips_part (
+hvfhs_license_num STRING,
+dispatching_base_num STRING,
+originating_base_num STRING,
+request_datetime BIGINT,
+on_scene_datetime BIGINT,
+pickup_datetime BIGINT,
+dropoff_datetime BIGINT,
+pu_location_id INT,
+do_location_id INT,
+trip_miles DOUBLE,
+trip_time BIGINT,
+base_passenger_fare DOUBLE,
+tolls DOUBLE,
+bcf DOUBLE,
+sales_tax DOUBLE,
+congestion_surcharge DOUBLE,
+airport_fee DOUBLE,
+tips DOUBLE,
+driver_pay DOUBLE,
+shared_request_flag STRING,
+shared_match_flag STRING,
+access_a_ride_flag STRING,
+wav_request_flag STRING,
+wav_match_flag STRING,
+index_level_0 BIGINT
+)
+PARTITIONED BY (
+month INT
+)
+CLUSTERED BY (pu_location_id) INTO 32 BUCKETS
+STORED AS AVRO
+LOCATION '/user/team6/project/hive/warehouse/fact_fhv_trips_part'
+TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY')
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : EXPLAIN output for queryid hive_20250520162812_0fdc0cb3-fed5-437e-820e-f4146490f71c : STAGE DEPENDENCIES:
+  Stage-0 is a root stage [DDL]
+
+STAGE PLANS:
+  Stage: Stage-0
+      Create Table Operator:
+        Create Table
+          bucket columns: pu_location_id
+          columns: hvfhs_license_num string, dispatching_base_num string, originating_base_num string, request_datetime bigint, on_scene_datetime bigint, pickup_datetime bigint, dropoff_datetime bigint, pu_location_id int, do_location_id int, trip_miles double, trip_time bigint, base_passenger_fare double, tolls double, bcf double, sales_tax double, congestion_surcharge double, airport_fee double, tips double, driver_pay double, shared_request_flag string, shared_match_flag string, access_a_ride_flag string, wav_request_flag string, wav_match_flag string, index_level_0 bigint
+          if not exists: true
+          input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+          location: /user/team6/project/hive/warehouse/fact_fhv_trips_part
+          # buckets: 32
+          output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+          partition columns: month int
+          serde name: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+          name: team6_projectdb.fact_fhv_trips_part
+          table properties:
+            AVRO.COMPRESS SNAPPY
+          isExternal: true
+
+
+INFO  : Completed compiling command(queryId=hive_20250520162812_0fdc0cb3-fed5-437e-820e-f4146490f71c); Time taken: 0.035 seconds
+INFO  : Executing command(queryId=hive_20250520162812_0fdc0cb3-fed5-437e-820e-f4146490f71c): CREATE EXTERNAL TABLE IF NOT EXISTS fact_fhv_trips_part (
+hvfhs_license_num STRING,
+dispatching_base_num STRING,
+originating_base_num STRING,
+request_datetime BIGINT,
+on_scene_datetime BIGINT,
+pickup_datetime BIGINT,
+dropoff_datetime BIGINT,
+pu_location_id INT,
+do_location_id INT,
+trip_miles DOUBLE,
+trip_time BIGINT,
+base_passenger_fare DOUBLE,
+tolls DOUBLE,
+bcf DOUBLE,
+sales_tax DOUBLE,
+congestion_surcharge DOUBLE,
+airport_fee DOUBLE,
+tips DOUBLE,
+driver_pay DOUBLE,
+shared_request_flag STRING,
+shared_match_flag STRING,
+access_a_ride_flag STRING,
+wav_request_flag STRING,
+wav_match_flag STRING,
+index_level_0 BIGINT
+)
+PARTITIONED BY (
+month INT
+)
+CLUSTERED BY (pu_location_id) INTO 32 BUCKETS
+STORED AS AVRO
+LOCATION '/user/team6/project/hive/warehouse/fact_fhv_trips_part'
+TBLPROPERTIES ('AVRO.COMPRESS'='SNAPPY')
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20250520162812_0fdc0cb3-fed5-437e-820e-f4146490f71c); Time taken: 0.026 seconds
+INFO  : OK
+No rows affected (0.094 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> INSERT OVERWRITE TABLE fact_fhv_trips_part
+. . . . . . . . . . . . . . . . . . . . . . .> PARTITION (month)
+. . . . . . . . . . . . . . . . . . . . . . .> SELECT 
+. . . . . . . . . . . . . . . . . . . . . . .>     hvfhs_license_num,
+. . . . . . . . . . . . . . . . . . . . . . .>     dispatching_base_num,
+. . . . . . . . . . . . . . . . . . . . . . .>     originating_base_num,
+. . . . . . . . . . . . . . . . . . . . . . .>     request_datetime,
+. . . . . . . . . . . . . . . . . . . . . . .>     on_scene_datetime,
+. . . . . . . . . . . . . . . . . . . . . . .>     pickup_datetime,
+. . . . . . . . . . . . . . . . . . . . . . .>     dropoff_datetime,
+. . . . . . . . . . . . . . . . . . . . . . .>     pu_location_id,
+. . . . . . . . . . . . . . . . . . . . . . .>     do_location_id,
+. . . . . . . . . . . . . . . . . . . . . . .>     trip_miles,
+. . . . . . . . . . . . . . . . . . . . . . .>     trip_time,
+. . . . . . . . . . . . . . . . . . . . . . .>     base_passenger_fare,
+. . . . . . . . . . . . . . . . . . . . . . .>     tolls,
+. . . . . . . . . . . . . . . . . . . . . . .>     bcf,
+. . . . . . . . . . . . . . . . . . . . . . .>     sales_tax,
+. . . . . . . . . . . . . . . . . . . . . . .>     congestion_surcharge,
+. . . . . . . . . . . . . . . . . . . . . . .>     airport_fee,
+. . . . . . . . . . . . . . . . . . . . . . .>     tips,
+. . . . . . . . . . . . . . . . . . . . . . .>     driver_pay,
+. . . . . . . . . . . . . . . . . . . . . . .>     shared_request_flag,
+. . . . . . . . . . . . . . . . . . . . . . .>     shared_match_flag,
+. . . . . . . . . . . . . . . . . . . . . . .>     access_a_ride_flag,
+. . . . . . . . . . . . . . . . . . . . . . .>     wav_request_flag,
+. . . . . . . . . . . . . . . . . . . . . . .>     wav_match_flag,
+. . . . . . . . . . . . . . . . . . . . . . .>     `___index_level_0__` AS index_level_0,
+. . . . . . . . . . . . . . . . . . . . . . .>     MONTH(FROM_UNIXTIME(CAST(pickup_datetime/1000 AS BIGINT))) AS month
+. . . . . . . . . . . . . . . . . . . . . . .> FROM fact_fhv_trips;
+INFO  : Compiling command(queryId=hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f): INSERT OVERWRITE TABLE fact_fhv_trips_part
+PARTITION (month)
+SELECT
+hvfhs_license_num,
+dispatching_base_num,
+originating_base_num,
+request_datetime,
+on_scene_datetime,
+pickup_datetime,
+dropoff_datetime,
+pu_location_id,
+do_location_id,
+trip_miles,
+trip_time,
+base_passenger_fare,
+tolls,
+bcf,
+sales_tax,
+congestion_surcharge,
+airport_fee,
+tips,
+driver_pay,
+shared_request_flag,
+shared_match_flag,
+access_a_ride_flag,
+wav_request_flag,
+wav_match_flag,
+`___index_level_0__` AS index_level_0,
+MONTH(FROM_UNIXTIME(CAST(pickup_datetime/1000 AS BIGINT))) AS month
+FROM fact_fhv_trips
+INFO  : Semantic Analysis Completed (retrial = false)
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:hvfhs_license_num, type:string, comment:null), FieldSchema(name:dispatching_base_num, type:string, comment:null), FieldSchema(name:originating_base_num, type:string, comment:null), FieldSchema(name:request_datetime, type:bigint, comment:null), FieldSchema(name:on_scene_datetime, type:bigint, comment:null), FieldSchema(name:pickup_datetime, type:bigint, comment:null), FieldSchema(name:dropoff_datetime, type:bigint, comment:null), FieldSchema(name:pu_location_id, type:int, comment:null), FieldSchema(name:do_location_id, type:int, comment:null), FieldSchema(name:trip_miles, type:double, comment:null), FieldSchema(name:trip_time, type:bigint, comment:null), FieldSchema(name:base_passenger_fare, type:double, comment:null), FieldSchema(name:tolls, type:double, comment:null), FieldSchema(name:bcf, type:double, comment:null), FieldSchema(name:sales_tax, type:double, comment:null), FieldSchema(name:congestion_surcharge, type:double, comment:null), FieldSchema(name:airport_fee, type:double, comment:null), FieldSchema(name:tips, type:double, comment:null), FieldSchema(name:driver_pay, type:double, comment:null), FieldSchema(name:shared_request_flag, type:string, comment:null), FieldSchema(name:shared_match_flag, type:string, comment:null), FieldSchema(name:access_a_ride_flag, type:string, comment:null), FieldSchema(name:wav_request_flag, type:string, comment:null), FieldSchema(name:wav_match_flag, type:string, comment:null), FieldSchema(name:index_level_0, type:bigint, comment:null), FieldSchema(name:month, type:int, comment:null)], properties:null)
+INFO  : EXPLAIN output for queryid hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f : STAGE DEPENDENCIES:
+  Stage-1 is a root stage [MAPRED]
+  Stage-2 depends on stages: Stage-1 [DEPENDENCY_COLLECTION]
+  Stage-0 depends on stages: Stage-2 [MOVE]
+  Stage-3 depends on stages: Stage-0 [STATS]
+
+STAGE PLANS:
+  Stage: Stage-1
+    Tez
+      DagId: hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f:19048
+      Edges:
+        Reducer 2 <- Map 1 (CUSTOM_SIMPLE_EDGE)
+        Reducer 3 <- Reducer 2 (SIMPLE_EDGE)
+      DagName: hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f:19048
+      Vertices:
+        Map 1 
+            Map Operator Tree:
+                TableScan
+                  alias: fact_fhv_trips
+                  Statistics: Num rows: 7733902 Data size: 8600099840 Basic stats: COMPLETE Column stats: NONE
+                  GatherStats: false
+                  Select Operator
+                    expressions: hvfhs_license_num (type: string), dispatching_base_num (type: string), originating_base_num (type: string), request_datetime (type: bigint), on_scene_datetime (type: bigint), pickup_datetime (type: bigint), dropoff_datetime (type: bigint), pu_location_id (type: int), do_location_id (type: int), trip_miles (type: double), trip_time (type: bigint), base_passenger_fare (type: double), tolls (type: double), bcf (type: double), sales_tax (type: double), congestion_surcharge (type: double), airport_fee (type: double), tips (type: double), driver_pay (type: double), shared_request_flag (type: string), shared_match_flag (type: string), access_a_ride_flag (type: string), wav_request_flag (type: string), wav_match_flag (type: string), ___index_level_0__ (type: bigint), month(CAST( from_unixtime(UDFToLong((UDFToDouble(pickup_datetime) / 1000.0D))) AS DATE)) (type: int)
+                    outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18, _col19, _col20, _col21, _col22, _col23, _col24, _col25
+                    Statistics: Num rows: 7733902 Data size: 8600099840 Basic stats: COMPLETE Column stats: NONE
+                    Reduce Output Operator
+                      null sort order: 
+                      sort order: 
+                      Map-reduce partition columns: _col7 (type: int)
+                      Statistics: Num rows: 7733902 Data size: 8600099840 Basic stats: COMPLETE Column stats: NONE
+                      tag: -1
+                      value expressions: _col0 (type: string), _col1 (type: string), _col2 (type: string), _col3 (type: bigint), _col4 (type: bigint), _col5 (type: bigint), _col6 (type: bigint), _col7 (type: int), _col8 (type: int), _col9 (type: double), _col10 (type: bigint), _col11 (type: double), _col12 (type: double), _col13 (type: double), _col14 (type: double), _col15 (type: double), _col16 (type: double), _col17 (type: double), _col18 (type: double), _col19 (type: string), _col20 (type: string), _col21 (type: string), _col22 (type: string), _col23 (type: string), _col24 (type: bigint), _col25 (type: int)
+                      auto parallelism: false
+            Execution mode: vectorized
+            Path -> Alias:
+              hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/warehouse/fact_fhv_trips [fact_fhv_trips]
+            Path -> Partition:
+              hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/warehouse/fact_fhv_trips 
+                Partition
+                  base file name: fact_fhv_trips
+                  input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                  output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                  properties:
+                    EXTERNAL TRUE
+                    avro.schema.url /user/team6/project/warehouse/avsc/fact_fhv_trips.avsc
+                    bucket_count -1
+                    bucketing_version 2
+                    column.name.delimiter ,
+                    columns hvfhs_license_num,dispatching_base_num,originating_base_num,request_datetime,on_scene_datetime,pickup_datetime,dropoff_datetime,pu_location_id,do_location_id,trip_miles,trip_time,base_passenger_fare,tolls,bcf,sales_tax,congestion_surcharge,airport_fee,tips,driver_pay,shared_request_flag,shared_match_flag,access_a_ride_flag,wav_request_flag,wav_match_flag,___index_level_0__
+                    columns.comments 
+                    columns.types string:string:string:bigint:bigint:bigint:bigint:int:int:double:bigint:double:double:double:double:double:double:double:double:string:string:string:string:string:bigint
+                    file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                    file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                    location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/warehouse/fact_fhv_trips
+                    name team6_projectdb.fact_fhv_trips
+                    numFiles 1
+                    serialization.ddl struct fact_fhv_trips { string hvfhs_license_num, string dispatching_base_num, string originating_base_num, i64 request_datetime, i64 on_scene_datetime, i64 pickup_datetime, i64 dropoff_datetime, i32 pu_location_id, i32 do_location_id, double trip_miles, i64 trip_time, double base_passenger_fare, double tolls, double bcf, double sales_tax, double congestion_surcharge, double airport_fee, double tips, double driver_pay, string shared_request_flag, string shared_match_flag, string access_a_ride_flag, string wav_request_flag, string wav_match_flag, i64 ___index_level_0__}
+                    serialization.format 1
+                    serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                    totalSize 860009981
+                    transient_lastDdlTime 1747747688
+                  serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                
+                    input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                    output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                    properties:
+                      EXTERNAL TRUE
+                      avro.schema.literal {"type":"record","name":"fact_fhv_trips","doc":"Sqoop import of fact_fhv_trips","fields":[{"name":"hvfhs_license_num","type":["null","string"],"default":null,"columnName":"hvfhs_license_num","sqlType":"12"},{"name":"dispatching_base_num","type":["null","string"],"default":null,"columnName":"dispatching_base_num","sqlType":"12"},{"name":"originating_base_num","type":["null","string"],"default":null,"columnName":"originating_base_num","sqlType":"12"},{"name":"request_datetime","type":["null","long"],"default":null,"columnName":"request_datetime","sqlType":"93"},{"name":"on_scene_datetime","type":["null","long"],"default":null,"columnName":"on_scene_datetime","sqlType":"93"},{"name":"pickup_datetime","type":["null","long"],"default":null,"columnName":"pickup_datetime","sqlType":"93"},{"name":"dropoff_datetime","type":["null","long"],"default":null,"columnName":"dropoff_datetime","sqlType":"93"},{"name":"pu_location_id","type":["null","int"],"default":null,"columnName":"pu_location_id","sqlType":"4"},{"name":"do_location_id","type":["null","int"],"default":null,"columnName":"do_location_id","sqlType":"4"},{"name":"trip_miles","type":["null","double"],"default":null,"columnName":"trip_miles","sqlType":"8"},{"name":"trip_time","type":["null","long"],"default":null,"columnName":"trip_time","sqlType":"-5"},{"name":"base_passenger_fare","type":["null","double"],"default":null,"columnName":"base_passenger_fare","sqlType":"8"},{"name":"tolls","type":["null","double"],"default":null,"columnName":"tolls","sqlType":"8"},{"name":"bcf","type":["null","double"],"default":null,"columnName":"bcf","sqlType":"8"},{"name":"sales_tax","type":["null","double"],"default":null,"columnName":"sales_tax","sqlType":"8"},{"name":"congestion_surcharge","type":["null","double"],"default":null,"columnName":"congestion_surcharge","sqlType":"8"},{"name":"airport_fee","type":["null","double"],"default":null,"columnName":"airport_fee","sqlType":"8"},{"name":"tips","type":["null","double"],"default":null,"columnName":"tips","sqlType":"8"},{"name":"driver_pay","type":["null","double"],"default":null,"columnName":"driver_pay","sqlType":"8"},{"name":"shared_request_flag","type":["null","string"],"default":null,"columnName":"shared_request_flag","sqlType":"12"},{"name":"shared_match_flag","type":["null","string"],"default":null,"columnName":"shared_match_flag","sqlType":"12"},{"name":"access_a_ride_flag","type":["null","string"],"default":null,"columnName":"access_a_ride_flag","sqlType":"12"},{"name":"wav_request_flag","type":["null","string"],"default":null,"columnName":"wav_request_flag","sqlType":"12"},{"name":"wav_match_flag","type":["null","string"],"default":null,"columnName":"wav_match_flag","sqlType":"12"},{"name":"___index_level_0__","type":["null","long"],"default":null,"columnName":"__index_level_0__","sqlType":"-5"}],"tableName":"fact_fhv_trips"}
+                      avro.schema.url /user/team6/project/warehouse/avsc/fact_fhv_trips.avsc
+                      bucket_count -1
+                      bucketing_version 2
+                      column.name.delimiter ,
+                      columns hvfhs_license_num,dispatching_base_num,originating_base_num,request_datetime,on_scene_datetime,pickup_datetime,dropoff_datetime,pu_location_id,do_location_id,trip_miles,trip_time,base_passenger_fare,tolls,bcf,sales_tax,congestion_surcharge,airport_fee,tips,driver_pay,shared_request_flag,shared_match_flag,access_a_ride_flag,wav_request_flag,wav_match_flag,___index_level_0__
+                      columns.comments 
+                      columns.types string:string:string:bigint:bigint:bigint:bigint:int:int:double:bigint:double:double:double:double:double:double:double:double:string:string:string:string:string:bigint
+                      file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                      file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                      location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/warehouse/fact_fhv_trips
+                      name team6_projectdb.fact_fhv_trips
+                      numFiles 1
+                      serialization.ddl struct fact_fhv_trips { string hvfhs_license_num, string dispatching_base_num, string originating_base_num, i64 request_datetime, i64 on_scene_datetime, i64 pickup_datetime, i64 dropoff_datetime, i32 pu_location_id, i32 do_location_id, double trip_miles, i64 trip_time, double base_passenger_fare, double tolls, double bcf, double sales_tax, double congestion_surcharge, double airport_fee, double tips, double driver_pay, string shared_request_flag, string shared_match_flag, string access_a_ride_flag, string wav_request_flag, string wav_match_flag, i64 ___index_level_0__}
+                      serialization.format 1
+                      serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                      totalSize 860009981
+                      transient_lastDdlTime 1747747688
+                    serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                    name: team6_projectdb.fact_fhv_trips
+                  name: team6_projectdb.fact_fhv_trips
+            Truncated Path -> Alias:
+              hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/warehouse/fact_fhv_trips [fact_fhv_trips]
+        Reducer 2 
+            Needs Tagging: false
+            Reduce Operator Tree:
+              Select Operator
+                expressions: VALUE._col0 (type: string), VALUE._col1 (type: string), VALUE._col2 (type: string), VALUE._col3 (type: bigint), VALUE._col4 (type: bigint), VALUE._col5 (type: bigint), VALUE._col6 (type: bigint), VALUE._col7 (type: int), VALUE._col8 (type: int), VALUE._col9 (type: double), VALUE._col10 (type: bigint), VALUE._col11 (type: double), VALUE._col12 (type: double), VALUE._col13 (type: double), VALUE._col14 (type: double), VALUE._col15 (type: double), VALUE._col16 (type: double), VALUE._col17 (type: double), VALUE._col18 (type: double), VALUE._col19 (type: string), VALUE._col20 (type: string), VALUE._col21 (type: string), VALUE._col22 (type: string), VALUE._col23 (type: string), VALUE._col24 (type: bigint), VALUE._col25 (type: int)
+                outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18, _col19, _col20, _col21, _col22, _col23, _col24, _col25
+                Statistics: Num rows: 7733902 Data size: 8600099840 Basic stats: COMPLETE Column stats: NONE
+                File Output Operator
+                  compressed: false
+                  GlobalTableId: 1
+                  directory: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part/.hive-staging_hive_2025-05-20_16-28-12_353_8675261078577265402-14169/-ext-10000
+                  NumFilesPerFileSink: 1
+                  Statistics: Num rows: 7733902 Data size: 8600099840 Basic stats: COMPLETE Column stats: NONE
+                  Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part/.hive-staging_hive_2025-05-20_16-28-12_353_8675261078577265402-14169/-ext-10000/
+                  table:
+                      input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                      output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                      properties:
+                        AVRO.COMPRESS SNAPPY
+                        EXTERNAL TRUE
+                        avro.schema.literal {"type":"record","name":"fact_fhv_trips_part","namespace":"team6_projectdb","fields":[{"name":"hvfhs_license_num","type":["null","string"],"default":null},{"name":"dispatching_base_num","type":["null","string"],"default":null},{"name":"originating_base_num","type":["null","string"],"default":null},{"name":"request_datetime","type":["null","long"],"default":null},{"name":"on_scene_datetime","type":["null","long"],"default":null},{"name":"pickup_datetime","type":["null","long"],"default":null},{"name":"dropoff_datetime","type":["null","long"],"default":null},{"name":"pu_location_id","type":["null","int"],"default":null},{"name":"do_location_id","type":["null","int"],"default":null},{"name":"trip_miles","type":["null","double"],"default":null},{"name":"trip_time","type":["null","long"],"default":null},{"name":"base_passenger_fare","type":["null","double"],"default":null},{"name":"tolls","type":["null","double"],"default":null},{"name":"bcf","type":["null","double"],"default":null},{"name":"sales_tax","type":["null","double"],"default":null},{"name":"congestion_surcharge","type":["null","double"],"default":null},{"name":"airport_fee","type":["null","double"],"default":null},{"name":"tips","type":["null","double"],"default":null},{"name":"driver_pay","type":["null","double"],"default":null},{"name":"shared_request_flag","type":["null","string"],"default":null},{"name":"shared_match_flag","type":["null","string"],"default":null},{"name":"access_a_ride_flag","type":["null","string"],"default":null},{"name":"wav_request_flag","type":["null","string"],"default":null},{"name":"wav_match_flag","type":["null","string"],"default":null},{"name":"index_level_0","type":["null","long"],"default":null}]}
+                        bucket_count 32
+                        bucket_field_name pu_location_id
+                        bucketing_version 2
+                        column.name.delimiter ,
+                        columns hvfhs_license_num,dispatching_base_num,originating_base_num,request_datetime,on_scene_datetime,pickup_datetime,dropoff_datetime,pu_location_id,do_location_id,trip_miles,trip_time,base_passenger_fare,tolls,bcf,sales_tax,congestion_surcharge,airport_fee,tips,driver_pay,shared_request_flag,shared_match_flag,access_a_ride_flag,wav_request_flag,wav_match_flag,index_level_0
+                        columns.comments 
+                        columns.types string:string:string:bigint:bigint:bigint:bigint:int:int:double:bigint:double:double:double:double:double:double:double:double:string:string:string:string:string:bigint
+                        file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                        file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                        location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part
+                        name team6_projectdb.fact_fhv_trips_part
+                        partition_columns month
+                        partition_columns.types int
+                        serialization.ddl struct fact_fhv_trips_part { string hvfhs_license_num, string dispatching_base_num, string originating_base_num, i64 request_datetime, i64 on_scene_datetime, i64 pickup_datetime, i64 dropoff_datetime, i32 pu_location_id, i32 do_location_id, double trip_miles, i64 trip_time, double base_passenger_fare, double tolls, double bcf, double sales_tax, double congestion_surcharge, double airport_fee, double tips, double driver_pay, string shared_request_flag, string shared_match_flag, string access_a_ride_flag, string wav_request_flag, string wav_match_flag, i64 index_level_0}
+                        serialization.format 1
+                        serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                        transient_lastDdlTime 1747747692
+                      serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                      name: team6_projectdb.fact_fhv_trips_part
+                  TotalFiles: 1
+                  GatherStats: true
+                  MultiFileSpray: false
+                Select Operator
+                  expressions: _col0 (type: string), _col1 (type: string), _col2 (type: string), _col3 (type: bigint), _col4 (type: bigint), _col5 (type: bigint), _col6 (type: bigint), _col7 (type: int), _col8 (type: int), _col9 (type: double), _col10 (type: bigint), _col11 (type: double), _col12 (type: double), _col13 (type: double), _col14 (type: double), _col15 (type: double), _col16 (type: double), _col17 (type: double), _col18 (type: double), _col19 (type: string), _col20 (type: string), _col21 (type: string), _col22 (type: string), _col23 (type: string), _col24 (type: bigint), _col25 (type: int)
+                  outputColumnNames: hvfhs_license_num, dispatching_base_num, originating_base_num, request_datetime, on_scene_datetime, pickup_datetime, dropoff_datetime, pu_location_id, do_location_id, trip_miles, trip_time, base_passenger_fare, tolls, bcf, sales_tax, congestion_surcharge, airport_fee, tips, driver_pay, shared_request_flag, shared_match_flag, access_a_ride_flag, wav_request_flag, wav_match_flag, index_level_0, month
+                  Statistics: Num rows: 7733902 Data size: 8600099840 Basic stats: COMPLETE Column stats: NONE
+                  Group By Operator
+                    aggregations: compute_stats(hvfhs_license_num, 'hll'), compute_stats(dispatching_base_num, 'hll'), compute_stats(originating_base_num, 'hll'), compute_stats(request_datetime, 'hll'), compute_stats(on_scene_datetime, 'hll'), compute_stats(pickup_datetime, 'hll'), compute_stats(dropoff_datetime, 'hll'), compute_stats(pu_location_id, 'hll'), compute_stats(do_location_id, 'hll'), compute_stats(trip_miles, 'hll'), compute_stats(trip_time, 'hll'), compute_stats(base_passenger_fare, 'hll'), compute_stats(tolls, 'hll'), compute_stats(bcf, 'hll'), compute_stats(sales_tax, 'hll'), compute_stats(congestion_surcharge, 'hll'), compute_stats(airport_fee, 'hll'), compute_stats(tips, 'hll'), compute_stats(driver_pay, 'hll'), compute_stats(shared_request_flag, 'hll'), compute_stats(shared_match_flag, 'hll'), compute_stats(access_a_ride_flag, 'hll'), compute_stats(wav_request_flag, 'hll'), compute_stats(wav_match_flag, 'hll'), compute_stats(index_level_0, 'hll')
+                    keys: month (type: int)
+                    mode: hash
+                    outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18, _col19, _col20, _col21, _col22, _col23, _col24, _col25
+                    Statistics: Num rows: 7733902 Data size: 8600099840 Basic stats: COMPLETE Column stats: NONE
+                    Reduce Output Operator
+                      key expressions: _col0 (type: int)
+                      null sort order: a
+                      sort order: +
+                      Map-reduce partition columns: _col0 (type: int)
+                      Statistics: Num rows: 7733902 Data size: 8600099840 Basic stats: COMPLETE Column stats: NONE
+                      tag: -1
+                      value expressions: _col1 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col2 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col3 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col4 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col5 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col6 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col7 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col8 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col9 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col10 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col11 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>), _col12 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col13 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col14 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col15 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col16 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col17 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col18 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col19 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,bitvector:binary>), _col20 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col21 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col22 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col23 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col24 (type: struct<columntype:string,maxlength:bigint,sumlength:bigint,count:bigint,countnulls:bigint,bitvector:binary>), _col25 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,bitvector:binary>)
+                      auto parallelism: true
+        Reducer 3 
+            Needs Tagging: false
+            Reduce Operator Tree:
+              Group By Operator
+                aggregations: compute_stats(VALUE._col0), compute_stats(VALUE._col1), compute_stats(VALUE._col2), compute_stats(VALUE._col3), compute_stats(VALUE._col4), compute_stats(VALUE._col5), compute_stats(VALUE._col6), compute_stats(VALUE._col7), compute_stats(VALUE._col8), compute_stats(VALUE._col9), compute_stats(VALUE._col10), compute_stats(VALUE._col11), compute_stats(VALUE._col12), compute_stats(VALUE._col13), compute_stats(VALUE._col14), compute_stats(VALUE._col15), compute_stats(VALUE._col16), compute_stats(VALUE._col17), compute_stats(VALUE._col18), compute_stats(VALUE._col19), compute_stats(VALUE._col20), compute_stats(VALUE._col21), compute_stats(VALUE._col22), compute_stats(VALUE._col23), compute_stats(VALUE._col24)
+                keys: KEY._col0 (type: int)
+                mode: mergepartial
+                outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18, _col19, _col20, _col21, _col22, _col23, _col24, _col25
+                Statistics: Num rows: 3866951 Data size: 4300049920 Basic stats: COMPLETE Column stats: NONE
+                Select Operator
+                  expressions: _col1 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col2 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col3 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col4 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col5 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col6 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col7 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col8 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col9 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col10 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col11 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col12 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col13 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col14 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col15 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col16 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col17 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col18 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col19 (type: struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col20 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col21 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col22 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col23 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col24 (type: struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col25 (type: struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>), _col0 (type: int)
+                  outputColumnNames: _col0, _col1, _col2, _col3, _col4, _col5, _col6, _col7, _col8, _col9, _col10, _col11, _col12, _col13, _col14, _col15, _col16, _col17, _col18, _col19, _col20, _col21, _col22, _col23, _col24, _col25
+                  Statistics: Num rows: 3866951 Data size: 4300049920 Basic stats: COMPLETE Column stats: NONE
+                  File Output Operator
+                    compressed: false
+                    GlobalTableId: 0
+                    directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team6/567ca46f-3726-4ce9-baa1-21c522e9bf82/hive_2025-05-20_16-28-12_534_5256805465089962329-14169/-mr-10000/.hive-staging_hive_2025-05-20_16-28-12_534_5256805465089962329-14169/-ext-10001
+                    NumFilesPerFileSink: 1
+                    Statistics: Num rows: 3866951 Data size: 4300049920 Basic stats: COMPLETE Column stats: NONE
+                    Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team6/567ca46f-3726-4ce9-baa1-21c522e9bf82/hive_2025-05-20_16-28-12_534_5256805465089962329-14169/-mr-10000/.hive-staging_hive_2025-05-20_16-28-12_534_5256805465089962329-14169/-ext-10001/
+                    table:
+                        input format: org.apache.hadoop.mapred.SequenceFileInputFormat
+                        output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
+                        properties:
+                          columns _col0,_col1,_col2,_col3,_col4,_col5,_col6,_col7,_col8,_col9,_col10,_col11,_col12,_col13,_col14,_col15,_col16,_col17,_col18,_col19,_col20,_col21,_col22,_col23,_col24,_col25
+                          columns.types struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:double,max:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,maxlength:bigint,avglength:double,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:struct<columntype:string,min:bigint,max:bigint,countnulls:bigint,numdistinctvalues:bigint,ndvbitvector:binary>:int
+                          escape.delim \
+                          hive.serialization.extend.additional.nesting.levels true
+                          serialization.escape.crlf true
+                          serialization.format 1
+                          serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                        serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+                    TotalFiles: 1
+                    GatherStats: false
+                    MultiFileSpray: false
+
+  Stage: Stage-2
+    Dependency Collection
+
+  Stage: Stage-0
+    Move Operator
+      tables:
+          partition:
+            month 
+          replace: true
+          source: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part/.hive-staging_hive_2025-05-20_16-28-12_353_8675261078577265402-14169/-ext-10000
+          table:
+              input format: org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+              output format: org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+              properties:
+                AVRO.COMPRESS SNAPPY
+                EXTERNAL TRUE
+                avro.schema.literal {"type":"record","name":"fact_fhv_trips_part","namespace":"team6_projectdb","fields":[{"name":"hvfhs_license_num","type":["null","string"],"default":null},{"name":"dispatching_base_num","type":["null","string"],"default":null},{"name":"originating_base_num","type":["null","string"],"default":null},{"name":"request_datetime","type":["null","long"],"default":null},{"name":"on_scene_datetime","type":["null","long"],"default":null},{"name":"pickup_datetime","type":["null","long"],"default":null},{"name":"dropoff_datetime","type":["null","long"],"default":null},{"name":"pu_location_id","type":["null","int"],"default":null},{"name":"do_location_id","type":["null","int"],"default":null},{"name":"trip_miles","type":["null","double"],"default":null},{"name":"trip_time","type":["null","long"],"default":null},{"name":"base_passenger_fare","type":["null","double"],"default":null},{"name":"tolls","type":["null","double"],"default":null},{"name":"bcf","type":["null","double"],"default":null},{"name":"sales_tax","type":["null","double"],"default":null},{"name":"congestion_surcharge","type":["null","double"],"default":null},{"name":"airport_fee","type":["null","double"],"default":null},{"name":"tips","type":["null","double"],"default":null},{"name":"driver_pay","type":["null","double"],"default":null},{"name":"shared_request_flag","type":["null","string"],"default":null},{"name":"shared_match_flag","type":["null","string"],"default":null},{"name":"access_a_ride_flag","type":["null","string"],"default":null},{"name":"wav_request_flag","type":["null","string"],"default":null},{"name":"wav_match_flag","type":["null","string"],"default":null},{"name":"index_level_0","type":["null","long"],"default":null}]}
+                bucket_count 32
+                bucket_field_name pu_location_id
+                bucketing_version 2
+                column.name.delimiter ,
+                columns hvfhs_license_num,dispatching_base_num,originating_base_num,request_datetime,on_scene_datetime,pickup_datetime,dropoff_datetime,pu_location_id,do_location_id,trip_miles,trip_time,base_passenger_fare,tolls,bcf,sales_tax,congestion_surcharge,airport_fee,tips,driver_pay,shared_request_flag,shared_match_flag,access_a_ride_flag,wav_request_flag,wav_match_flag,index_level_0
+                columns.comments 
+                columns.types string:string:string:bigint:bigint:bigint:bigint:int:int:double:bigint:double:double:double:double:double:double:double:double:string:string:string:string:string:bigint
+                file.inputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat
+                file.outputformat org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat
+                location hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part
+                name team6_projectdb.fact_fhv_trips_part
+                partition_columns month
+                partition_columns.types int
+                serialization.ddl struct fact_fhv_trips_part { string hvfhs_license_num, string dispatching_base_num, string originating_base_num, i64 request_datetime, i64 on_scene_datetime, i64 pickup_datetime, i64 dropoff_datetime, i32 pu_location_id, i32 do_location_id, double trip_miles, i64 trip_time, double base_passenger_fare, double tolls, double bcf, double sales_tax, double congestion_surcharge, double airport_fee, double tips, double driver_pay, string shared_request_flag, string shared_match_flag, string access_a_ride_flag, string wav_request_flag, string wav_match_flag, i64 index_level_0}
+                serialization.format 1
+                serialization.lib org.apache.hadoop.hive.serde2.avro.AvroSerDe
+                transient_lastDdlTime 1747747692
+              serde: org.apache.hadoop.hive.serde2.avro.AvroSerDe
+              name: team6_projectdb.fact_fhv_trips_part
+
+  Stage: Stage-3
+    Stats Work
+      Basic Stats Work:
+          Stats Aggregation Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part/.hive-staging_hive_2025-05-20_16-28-12_353_8675261078577265402-14169/-ext-10000/
+      Column Stats Desc:
+          Columns: hvfhs_license_num, dispatching_base_num, originating_base_num, request_datetime, on_scene_datetime, pickup_datetime, dropoff_datetime, pu_location_id, do_location_id, trip_miles, trip_time, base_passenger_fare, tolls, bcf, sales_tax, congestion_surcharge, airport_fee, tips, driver_pay, shared_request_flag, shared_match_flag, access_a_ride_flag, wav_request_flag, wav_match_flag, index_level_0
+          Column Types: string, string, string, bigint, bigint, bigint, bigint, int, int, double, bigint, double, double, double, double, double, double, double, double, string, string, string, string, string, bigint
+          Table: team6_projectdb.fact_fhv_trips_part
+          Is Table Level Stats: false
+
+
+INFO  : Completed compiling command(queryId=hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f); Time taken: 0.231 seconds
+INFO  : Executing command(queryId=hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f): INSERT OVERWRITE TABLE fact_fhv_trips_part
+PARTITION (month)
+SELECT
+hvfhs_license_num,
+dispatching_base_num,
+originating_base_num,
+request_datetime,
+on_scene_datetime,
+pickup_datetime,
+dropoff_datetime,
+pu_location_id,
+do_location_id,
+trip_miles,
+trip_time,
+base_passenger_fare,
+tolls,
+bcf,
+sales_tax,
+congestion_surcharge,
+airport_fee,
+tips,
+driver_pay,
+shared_request_flag,
+shared_match_flag,
+access_a_ride_flag,
+wav_request_flag,
+wav_match_flag,
+`___index_level_0__` AS index_level_0,
+MONTH(FROM_UNIXTIME(CAST(pickup_datetime/1000 AS BIGINT))) AS month
+FROM fact_fhv_trips
+INFO  : Query ID = hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f
+INFO  : Total jobs = 1
+INFO  : Launching Job 1 out of 1
+INFO  : Starting task [Stage-1:MAPRED] in serial mode
+INFO  : Subscribed to counters: [] for queryId: hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f
+INFO  : Tez session hasn't been created yet. Opening session
+INFO  : Dag name: INSERT OVERWRITE TABLE fact...fact_fhv_trips (Stage-1)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1747061929929_4104)
+
+[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED     17          0        0       17       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 1.05 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED     17          0        0       17       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 1.55 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED     17          0        0       17       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.06 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED     17          0        0       17       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 2.56 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED     17          0        0       17       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.06 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED     17          0        0       17       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 3.56 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0        2       15       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 4.06 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0        9        8       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 4.57 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0        9        8       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 5.07 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0        9        8       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 5.57 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0        9        8       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 6.07 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       10        7       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 7.07 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       10        7       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 8.08 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       11        6       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 9.08 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       11        6       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 10.08 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       12        5       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 11.08 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       13        4       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 12.09 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       13        4       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 13.09 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       14        3       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 14.09 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       14        3       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 15.09 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          0       15        2       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 0%    ELAPSED TIME: 16.09 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container       RUNNING     17          1       15        1       0       0  
+Reducer 2        container        INITED     32          0        0       32       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [>>--------------------------] 1%    ELAPSED TIME: 17.59 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 ..         container       RUNNING     17          4       13        0       0       0  
+Reducer 2        container       RUNNING     32          0        3       29       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [=>>-------------------------] 4%    ELAPSED TIME: 19.10 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .....      container       RUNNING     17         10        7        0       0       0  
+Reducer 2        container       RUNNING     32          0       10       22       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [===>>-----------------------] 12%   ELAPSED TIME: 20.60 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 ......     container       RUNNING     17         11        6        0       0       0  
+Reducer 2        container       RUNNING     32          0       13       19       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [===>>-----------------------] 13%   ELAPSED TIME: 22.10 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......    container       RUNNING     17         12        5        0       0       0  
+Reducer 2        container       RUNNING     32          0       14       18       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [===>>-----------------------] 14%   ELAPSED TIME: 23.60 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......    container       RUNNING     17         13        4        0       0       0  
+Reducer 2        container       RUNNING     32          0       15       17       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [====>>----------------------] 15%   ELAPSED TIME: 25.10 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......    container       RUNNING     17         13        4        0       0       0  
+Reducer 2        container       RUNNING     32          0       15       17       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [====>>----------------------] 15%   ELAPSED TIME: 26.61 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 ........   container       RUNNING     17         15        2        0       0       0  
+Reducer 2        container       RUNNING     32          0       17       15       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [====>>----------------------] 18%   ELAPSED TIME: 28.61 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .........  container       RUNNING     17         16        1        0       0       0  
+Reducer 2        container       RUNNING     32          0       18       14       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 00/03  [=====>>---------------------] 19%   ELAPSED TIME: 30.61 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 .      container       RUNNING     32          9       19        4       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [========>>------------------] 31%   ELAPSED TIME: 32.61 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 ..     container       RUNNING     32         12       19        1       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [=========>>-----------------] 34%   ELAPSED TIME: 34.61 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 ..     container       RUNNING     32         13       19        0       0       0  
+Reducer 3        container        INITED     34          0        0       34       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [=========>>-----------------] 36%   ELAPSED TIME: 36.62 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 ...    container       RUNNING     32         18       14        0       0       0  
+Reducer 3        container       RUNNING     34          0        5       29       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [==========>>----------------] 42%   ELAPSED TIME: 39.12 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 ....   container       RUNNING     32         24        8        0       0       0  
+Reducer 3        container       RUNNING     34          0       11       23       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [============>>--------------] 49%   ELAPSED TIME: 41.62 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 .....  container       RUNNING     32         30        2        0       0       0  
+Reducer 3        container       RUNNING     34          0       17       17       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [==============>>------------] 56%   ELAPSED TIME: 44.12 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 .....  container       RUNNING     32         30        2        0       0       0  
+Reducer 3        container       RUNNING     34          0       17       17       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 01/03  [==============>>------------] 56%   ELAPSED TIME: 46.62 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 ...... container     SUCCEEDED     32         32        0        0       0       0  
+Reducer 3 ...... container     SUCCEEDED     34         34        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 49.62 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+[9A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED     17         17        0        0       0       0  
+Reducer 2 ...... container     SUCCEEDED     32         32        0        0       0       0  
+Reducer 3 ...... container     SUCCEEDED     34         34        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 50.18 s    
+[22;0m[2K----------------------------------------------------------------------------------------------
+INFO  : Starting task [Stage-2:DEPENDENCY_COLLECTION] in serial mode
+INFO  : Starting task [Stage-0:MOVE] in serial mode
+INFO  : Loading data to table team6_projectdb.fact_fhv_trips_part partition (month=null) from hdfs://hadoop-02.uni.innopolis.ru:8020/user/team6/project/hive/warehouse/fact_fhv_trips_part/.hive-staging_hive_2025-05-20_16-28-12_353_8675261078577265402-14169/-ext-10000
+INFO  : 
+
+INFO  : 	 Time taken to load dynamic partitions: 0.425 seconds
+INFO  : 	 Time taken for adding to write entity : 0.002 seconds
+INFO  : Starting task [Stage-3:STATS] in serial mode
+INFO  : Completed executing command(queryId=hive_20250520162812_46a0d5de-52af-4671-937e-7fcdb0811b2f); Time taken: 54.232 seconds
+INFO  : OK
+No rows affected (54.482 seconds)
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001/team6_projectdb

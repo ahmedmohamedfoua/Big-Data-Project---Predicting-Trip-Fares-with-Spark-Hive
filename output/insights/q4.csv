@@ -1,0 +1,1001 @@
+from_zone,to_zone,empty_runs_count,avg_distance_miles
+Outside of NYC,Flushing,314,13.76,9
+TriBeCa/Civic Center,LaGuardia Airport,316,5.64,9
+LaGuardia Airport,East Chelsea,321,8.44,9
+Outside of NYC,East Flatbush/Remsen Village,324,13.15,9
+Outside of NYC,East Concourse/Concourse Village,330,12.43,9
+Outside of NYC,Borough Park,330,13.4,9
+Outside of NYC,Washington Heights North,333,13.7,9
+Outside of NYC,Upper West Side South,334,13.97,9
+Outside of NYC,Central Harlem,352,14.86,9
+Outside of NYC,Clinton West,354,13.29,9
+Outside of NYC,East Harlem South,357,13.01,9
+Outside of NYC,Ridgewood,358,13.85,9
+Outside of NYC,Sunnyside,358,13.26,9
+Outside of NYC,Sutton Place/Turtle Bay North,360,13.06,9
+East Village,LaGuardia Airport,364,5.88,9
+Outside of NYC,Fort Greene,365,15.07,9
+Outside of NYC,Kips Bay,366,12.34,9
+Outside of NYC,UN/Turtle Bay South,376,14.14,9
+Crown Heights North,JFK Airport,382,5.51,9
+Outside of NYC,Brownsville,387,12.84,9
+Outside of NYC,South Ozone Park,390,13.8,9
+Outside of NYC,Lenox Hill West,394,13.62,9
+Outside of NYC,Garment District,413,13.61,9
+Outside of NYC,SoHo,418,14.3,9
+Outside of NYC,Boerum Hill,421,13.78,9
+Outside of NYC,Washington Heights South,423,13.23,9
+Outside of NYC,Jamaica,423,12.92,9
+Crown Heights North,LaGuardia Airport,431,4.88,9
+Outside of NYC,Mott Haven/Port Morris,431,13.69,9
+Outside of NYC,Clinton Hill,433,11.63,9
+Outside of NYC,Upper East Side South,434,13.75,9
+Outside of NYC,Elmhurst,435,14.19,9
+Outside of NYC,Greenwich Village North,449,14.01,9
+Outside of NYC,Meatpacking/West Village West,451,12.88,9
+Outside of NYC,Prospect-Lefferts Gardens,452,12.63,9
+Outside of NYC,Lincoln Square East,453,12.84,9
+Outside of NYC,Forest Hills,456,12.52,9
+Outside of NYC,East Harlem North,456,13.67,9
+Outside of NYC,Jackson Heights,458,13.18,9
+Outside of NYC,Bushwick North,463,13.71,9
+Outside of NYC,Upper East Side North,463,13.13,9
+LaGuardia Airport,JFK Airport,463,9.88,9
+Outside of NYC,Penn Station/Madison Sq West,464,13.08,9
+Outside of NYC,Gramercy,465,12.91,9
+Outside of NYC,Flatbush/Ditmas Park,470,13.44,9
+Outside of NYC,Financial District North,473,13.9,9
+Outside of NYC,Canarsie,475,12.73,9
+Outside of NYC,Flatiron,480,13.01,9
+Outside of NYC,Stuyvesant Heights,485,13.3,9
+Outside of NYC,Park Slope,499,13.41,9
+Outside of NYC,Greenwich Village South,506,12.5,9
+Outside of NYC,Williamsburg (South Side),521,12.31,9
+Outside of NYC,East Williamsburg,525,13.9,9
+Outside of NYC,Murray Hill,526,14.17,9
+Outside of NYC,Central Harlem North,528,13.38,9
+Outside of NYC,Long Island City/Hunters Point,537,13.25,9
+Outside of NYC,Little Italy/NoLiTa,552,12.38,9
+Outside of NYC,Midtown East,573,14.43,9
+Outside of NYC,Bedford,582,13.13,9
+Outside of NYC,Clinton East,603,13.14,9
+Outside of NYC,Astoria,604,12.49,9
+Outside of NYC,Midtown North,612,14.64,9
+Outside of NYC,West Village,616,12.85,9
+Outside of NYC,Bushwick South,631,12.87,9
+Outside of NYC,Greenpoint,631,12.77,9
+Outside of NYC,East New York,633,14.9,9
+Outside of NYC,Williamsburg (North Side),647,14.13,9
+Outside of NYC,West Chelsea/Hudson Yards,664,14.37,9
+Outside of NYC,Midtown South,677,13.05,9
+Outside of NYC,Union Sq,709,13.43,9
+Outside of NYC,East Chelsea,724,13.95,9
+Outside of NYC,Lower East Side,740,13.01,9
+Outside of NYC,Crown Heights North,751,13.02,9
+Outside of NYC,TriBeCa/Civic Center,757,13.46,9
+Outside of NYC,Times Sq/Theatre District,781,14.17,9
+Outside of NYC,East Village,867,13.98,9
+Outside of NYC,Midtown Center,889,13.18,9
+Outside of NYC,LaGuardia Airport,1304,15.06,9
+Outside of NYC,JFK Airport,1307,15.89,9
+Outside of NYC,Battery Park City,313,13.34,10
+Outside of NYC,Brooklyn Heights,316,14.61,10
+Outside of NYC,Mount Hope,320,12.58,10
+Outside of NYC,Clinton Hill,323,12.09,10
+Bushwick South,JFK Airport,323,6.74,10
+LaGuardia Airport,Times Sq/Theatre District,325,8.79,10
+Crown Heights North,LaGuardia Airport,332,4.6,10
+Outside of NYC,East Concourse/Concourse Village,334,14.64,10
+Outside of NYC,Boerum Hill,334,15.49,10
+Outside of NYC,Yorkville West,336,14.78,10
+Outside of NYC,Lenox Hill East,337,13.72,10
+LaGuardia Airport,Crown Heights North,337,7.96,10
+Outside of NYC,Bay Ridge,341,13.49,10
+Outside of NYC,Washington Heights North,345,11.44,10
+Outside of NYC,Brownsville,348,12.54,10
+Outside of NYC,Mott Haven/Port Morris,350,14.58,10
+East Village,LaGuardia Airport,354,4.48,10
+Outside of NYC,Clinton West,355,13.42,10
+Outside of NYC,Canarsie,356,13.8,10
+Outside of NYC,Sutton Place/Turtle Bay North,358,13.16,10
+Outside of NYC,UN/Turtle Bay South,360,12.82,10
+Outside of NYC,East Harlem South,362,14.09,10
+Outside of NYC,SoHo,364,14.02,10
+Outside of NYC,Central Harlem,369,13.32,10
+Outside of NYC,Greenwich Village North,381,13.71,10
+Outside of NYC,Penn Station/Madison Sq West,381,14.36,10
+Outside of NYC,Flushing,383,13.68,10
+Crown Heights North,JFK Airport,383,6.15,10
+Outside of NYC,West Concourse,383,12.81,10
+Outside of NYC,Lenox Hill West,384,13.25,10
+Outside of NYC,Meatpacking/West Village West,386,14.37,10
+Outside of NYC,Forest Hills,391,14.17,10
+Outside of NYC,Flatiron,396,12.78,10
+Outside of NYC,Garment District,396,13.33,10
+Outside of NYC,Upper West Side South,397,12.35,10
+Outside of NYC,Ridgewood,403,13.5,10
+Outside of NYC,East Harlem North,409,13.32,10
+Outside of NYC,Financial District North,426,13.84,10
+Outside of NYC,Lincoln Square East,429,13.43,10
+Outside of NYC,Fort Greene,440,13.69,10
+Outside of NYC,South Ozone Park,444,12.12,10
+Outside of NYC,Greenwich Village South,456,13.57,10
+Outside of NYC,Washington Heights South,459,13.05,10
+Outside of NYC,Little Italy/NoLiTa,462,12.6,10
+Outside of NYC,Upper East Side North,463,14.38,10
+Outside of NYC,Jamaica,464,12.8,10
+Outside of NYC,Prospect-Lefferts Gardens,465,12.83,10
+Outside of NYC,Central Harlem North,468,13.51,10
+Outside of NYC,Flatbush/Ditmas Park,469,13.11,10
+Outside of NYC,Bedford,473,14.29,10
+Outside of NYC,Long Island City/Hunters Point,479,13.39,10
+Outside of NYC,Jackson Heights,481,12.74,10
+Outside of NYC,Gramercy,493,12.55,10
+Outside of NYC,Elmhurst,499,12.4,10
+Outside of NYC,Stuyvesant Heights,504,13.52,10
+Outside of NYC,Bushwick North,521,12.62,10
+LaGuardia Airport,JFK Airport,523,10.39,10
+Outside of NYC,East Williamsburg,538,13.93,10
+Outside of NYC,Murray Hill,542,15.31,10
+Outside of NYC,Williamsburg (South Side),544,13.59,10
+Outside of NYC,West Village,548,13.41,10
+Outside of NYC,Midtown North,563,13.39,10
+Outside of NYC,Clinton East,569,14.62,10
+Outside of NYC,Upper East Side South,580,13.1,10
+Outside of NYC,Park Slope,608,13.41,10
+Outside of NYC,Midtown East,610,14.5,10
+Outside of NYC,Astoria,613,13.03,10
+Outside of NYC,East New York,618,12.72,10
+Outside of NYC,Greenpoint,642,12.81,10
+Outside of NYC,Midtown South,646,13.34,10
+Outside of NYC,Bushwick South,665,14.03,10
+Outside of NYC,West Chelsea/Hudson Yards,667,13.57,10
+Outside of NYC,Williamsburg (North Side),679,13.42,10
+Outside of NYC,Union Sq,680,13.9,10
+Outside of NYC,Lower East Side,680,13.72,10
+Outside of NYC,Crown Heights North,744,13.42,10
+Outside of NYC,East Chelsea,754,13.43,10
+Outside of NYC,TriBeCa/Civic Center,783,13.3,10
+Outside of NYC,Times Sq/Theatre District,823,14.14,10
+Outside of NYC,East Village,908,13.22,10
+Outside of NYC,Midtown Center,966,14.71,10
+Outside of NYC,LaGuardia Airport,1326,14.75,10
+Outside of NYC,JFK Airport,1364,15.81,10
+LaGuardia Airport,East New York,311,8.36,5
+Bushwick South,LaGuardia Airport,311,5.5,5
+LaGuardia Airport,TriBeCa/Civic Center,311,8.19,5
+Outside of NYC,East Harlem South,312,14.29,5
+Astoria,JFK Airport,313,6.41,5
+Bushwick South,JFK Airport,314,7.56,5
+LaGuardia Airport,Times Sq/Theatre District,317,8.68,5
+Outside of NYC,Brooklyn Heights,317,13.24,5
+TriBeCa/Civic Center,JFK Airport,318,6.25,5
+Outside of NYC,Boerum Hill,322,13.32,5
+Outside of NYC,Clinton Hill,325,13.41,5
+Outside of NYC,Flushing,326,13.24,5
+Outside of NYC,Sunnyside,329,13.46,5
+Outside of NYC,Mount Hope,329,12.83,5
+Outside of NYC,Fort Greene,331,13.63,5
+Outside of NYC,Garment District,332,14.15,5
+East Village,LaGuardia Airport,335,5.18,5
+Outside of NYC,East Harlem North,336,14.02,5
+Outside of NYC,SoHo,340,13.51,5
+Outside of NYC,Ridgewood,341,14.12,5
+LaGuardia Airport,Crown Heights North,353,8.17,5
+Outside of NYC,Sutton Place/Turtle Bay North,358,12.85,5
+Outside of NYC,Elmhurst,358,14.48,5
+Outside of NYC,Meatpacking/West Village West,358,13.58,5
+Crown Heights North,JFK Airport,363,5.51,5
+Outside of NYC,Upper West Side South,368,13.12,5
+Outside of NYC,Lenox Hill West,369,12.42,5
+Outside of NYC,Clinton West,373,13.81,5
+Outside of NYC,South Ozone Park,376,12.78,5
+Outside of NYC,Financial District North,377,14.38,5
+Outside of NYC,Greenwich Village North,380,13.08,5
+Outside of NYC,Upper East Side North,380,12.63,5
+Outside of NYC,Flatiron,382,11.89,5
+Crown Heights North,LaGuardia Airport,395,5.44,5
+Outside of NYC,Penn Station/Madison Sq West,395,14.02,5
+Outside of NYC,Greenwich Village South,400,13.87,5
+Outside of NYC,Canarsie,403,12.7,5
+Outside of NYC,Forest Hills,407,12.1,5
+Outside of NYC,Flatbush/Ditmas Park,408,13.11,5
+Outside of NYC,Stuyvesant Heights,413,13.7,5
+Outside of NYC,Prospect-Lefferts Gardens,416,13.67,5
+Outside of NYC,Washington Heights South,416,13.53,5
+Outside of NYC,Mott Haven/Port Morris,417,13.97,5
+Outside of NYC,Little Italy/NoLiTa,429,13.4,5
+Outside of NYC,East Williamsburg,431,12.91,5
+Outside of NYC,Lincoln Square East,431,13.48,5
+Outside of NYC,Jamaica,438,13.57,5
+Outside of NYC,Central Harlem North,441,12.95,5
+Outside of NYC,Bedford,442,13.47,5
+Outside of NYC,Bushwick North,451,14.22,5
+Outside of NYC,Jackson Heights,454,12.93,5
+Outside of NYC,Williamsburg (South Side),473,14.75,5
+Outside of NYC,Gramercy,490,13.67,5
+Outside of NYC,Greenpoint,503,12.32,5
+Outside of NYC,Park Slope,505,13.58,5
+Outside of NYC,Midtown East,521,14.16,5
+LaGuardia Airport,JFK Airport,521,9.96,5
+Outside of NYC,Long Island City/Hunters Point,532,14.38,5
+Outside of NYC,Clinton East,536,14.15,5
+Outside of NYC,Astoria,540,14.46,5
+Outside of NYC,Murray Hill,554,13.54,5
+Outside of NYC,Upper East Side South,571,13.46,5
+Outside of NYC,East New York,596,14.22,5
+Outside of NYC,Bushwick South,605,13.54,5
+Outside of NYC,Midtown South,611,13.75,5
+Outside of NYC,Lower East Side,615,13.52,5
+Outside of NYC,East Chelsea,622,14.12,5
+Outside of NYC,West Village,635,12.92,5
+Outside of NYC,Union Sq,653,14.31,5
+Outside of NYC,Midtown North,654,13.67,5
+Outside of NYC,Williamsburg (North Side),657,14.32,5
+Outside of NYC,Crown Heights North,728,13.07,5
+Outside of NYC,West Chelsea/Hudson Yards,729,13.85,5
+Outside of NYC,Times Sq/Theatre District,739,14.05,5
+Outside of NYC,TriBeCa/Civic Center,755,13.65,5
+Outside of NYC,Midtown Center,785,15.07,5
+Outside of NYC,East Village,820,13.81,5
+Outside of NYC,JFK Airport,1240,15.27,5
+Outside of NYC,LaGuardia Airport,1288,15.77,5
+Outside of NYC,Bedford Park,313,13.73,6
+Outside of NYC,East Flatbush/Remsen Village,314,14.21,6
+Outside of NYC,Greenwich Village North,315,13.02,6
+Outside of NYC,UN/Turtle Bay South,318,12.87,6
+Outside of NYC,Washington Heights North,319,12.61,6
+Outside of NYC,Downtown Brooklyn/MetroTech,320,13.06,6
+Bushwick South,LaGuardia Airport,329,5.33,6
+Outside of NYC,Bay Ridge,330,12.73,6
+Outside of NYC,Garment District,337,13.91,6
+Outside of NYC,Ridgewood,339,13.87,6
+Outside of NYC,SoHo,339,12.44,6
+Outside of NYC,Sunnyside,339,13.9,6
+Outside of NYC,Boerum Hill,341,13.35,6
+Outside of NYC,Clinton Hill,345,11.99,6
+Outside of NYC,Upper West Side South,349,13.45,6
+Outside of NYC,East Concourse/Concourse Village,354,12.36,6
+Crown Heights North,LaGuardia Airport,359,4.66,6
+Outside of NYC,Lenox Hill West,365,15.17,6
+Outside of NYC,Sutton Place/Turtle Bay North,369,12.29,6
+Outside of NYC,Elmhurst,370,14.17,6
+Outside of NYC,Flatiron,372,13.85,6
+Outside of NYC,Financial District North,375,14.09,6
+Outside of NYC,South Ozone Park,379,13.35,6
+Outside of NYC,Mott Haven/Port Morris,379,13.78,6
+Outside of NYC,Central Harlem,385,12.84,6
+Outside of NYC,Lincoln Square East,386,12.34,6
+Outside of NYC,Penn Station/Madison Sq West,391,13.64,6
+Outside of NYC,Canarsie,394,12.88,6
+Outside of NYC,East Harlem North,395,13.39,6
+LaGuardia Airport,Crown Heights North,396,8.4,6
+Outside of NYC,Upper East Side North,398,12.44,6
+Outside of NYC,Greenwich Village South,399,14.06,6
+Outside of NYC,Meatpacking/West Village West,402,13.06,6
+Outside of NYC,Fort Greene,403,13.34,6
+Outside of NYC,Forest Hills,405,13.39,6
+Crown Heights North,JFK Airport,408,5.58,6
+Outside of NYC,Jamaica,412,13.21,6
+Outside of NYC,Jackson Heights,423,13.72,6
+Outside of NYC,Little Italy/NoLiTa,432,13.52,6
+Outside of NYC,Long Island City/Hunters Point,444,13.54,6
+Outside of NYC,Bedford,445,12.83,6
+Outside of NYC,Flatbush/Ditmas Park,447,13.39,6
+LaGuardia Airport,JFK Airport,461,10.02,6
+Outside of NYC,Stuyvesant Heights,468,12.47,6
+Outside of NYC,Gramercy,472,13.58,6
+Outside of NYC,Prospect-Lefferts Gardens,480,14.19,6
+Outside of NYC,Washington Heights South,482,12.99,6
+Outside of NYC,Central Harlem North,490,13.94,6
+Outside of NYC,Park Slope,517,14.1,6
+Outside of NYC,Midtown East,530,13.28,6
+Outside of NYC,Midtown North,537,14.27,6
+Outside of NYC,Upper East Side South,540,12.77,6
+Outside of NYC,East Williamsburg,541,12.66,6
+Outside of NYC,Bushwick North,546,13.18,6
+Outside of NYC,Murray Hill,552,14.73,6
+Outside of NYC,Astoria,557,13.65,6
+Outside of NYC,Greenpoint,609,13.43,6
+Outside of NYC,Clinton East,615,13.91,6
+Outside of NYC,Williamsburg (South Side),616,11.81,6
+Outside of NYC,Midtown South,617,12.9,6
+Outside of NYC,Lower East Side,617,14.13,6
+Outside of NYC,East New York,624,13.55,6
+Outside of NYC,Bushwick South,643,13.25,6
+Outside of NYC,Union Sq,643,13.27,6
+Outside of NYC,West Village,649,13.73,6
+Outside of NYC,Williamsburg (North Side),719,14.05,6
+Outside of NYC,West Chelsea/Hudson Yards,727,13.86,6
+Outside of NYC,TriBeCa/Civic Center,730,14.13,6
+Outside of NYC,Times Sq/Theatre District,735,14.02,6
+Outside of NYC,East Chelsea,750,14.3,6
+Outside of NYC,Crown Heights North,766,13.41,6
+Outside of NYC,Midtown Center,767,14.46,6
+Outside of NYC,East Village,810,13.78,6
+Outside of NYC,LaGuardia Airport,1085,14.7,6
+Outside of NYC,JFK Airport,1086,15.8,6
+Outside of NYC,Woodside,313,12.47,12
+Outside of NYC,Flatlands,321,12.43,12
+Outside of NYC,Hamilton Heights,322,14.21,12
+Outside of NYC,UN/Turtle Bay South,324,14.34,12
+Outside of NYC,East Concourse/Concourse Village,326,12.73,12
+Outside of NYC,Washington Heights North,329,12.2,12
+Crown Heights North,LaGuardia Airport,330,5.31,12
+LaGuardia Airport,East New York,338,8.46,12
+Outside of NYC,Co-Op City,338,13.55,12
+Outside of NYC,West Concourse,341,13.55,12
+Outside of NYC,Lenox Hill East,346,13.33,12
+Outside of NYC,Mount Hope,349,13.78,12
+Outside of NYC,Yorkville West,352,14.47,12
+Outside of NYC,Bay Ridge,355,13.24,12
+LaGuardia Airport,JFK Airport,370,9.87,12
+Outside of NYC,Central Harlem,371,13.67,12
+Outside of NYC,Borough Park,372,13.96,12
+Outside of NYC,Brownsville,378,14.21,12
+Outside of NYC,East Harlem South,383,13.07,12
+Outside of NYC,Mott Haven/Port Morris,383,13.25,12
+Outside of NYC,Garment District,385,15.11,12
+Outside of NYC,Boerum Hill,386,13.76,12
+Outside of NYC,Greenwich Village North,389,14.86,12
+Outside of NYC,SoHo,389,14.57,12
+Outside of NYC,Sunnyside,392,12.96,12
+Outside of NYC,Financial District North,394,13.62,12
+Outside of NYC,Clinton Hill,400,13.72,12
+Outside of NYC,Ridgewood,404,12.66,12
+Outside of NYC,Flatiron,405,14.52,12
+Outside of NYC,Fort Greene,415,13.37,12
+Outside of NYC,Sutton Place/Turtle Bay North,418,13.32,12
+Outside of NYC,East Harlem North,419,13.3,12
+Outside of NYC,Upper West Side South,420,13.73,12
+Outside of NYC,Greenwich Village South,421,14.46,12
+Outside of NYC,Lenox Hill West,426,14.16,12
+Outside of NYC,Flushing,441,13.06,12
+Outside of NYC,East Williamsburg,444,13.47,12
+Outside of NYC,Little Italy/NoLiTa,449,13.4,12
+Outside of NYC,Penn Station/Madison Sq West,452,13.61,12
+Outside of NYC,Meatpacking/West Village West,457,13.55,12
+Outside of NYC,Lincoln Square East,458,13.36,12
+Outside of NYC,South Ozone Park,465,13.68,12
+Outside of NYC,Stuyvesant Heights,466,13.34,12
+Outside of NYC,Prospect-Lefferts Gardens,468,13.07,12
+Outside of NYC,Canarsie,474,13.55,12
+Outside of NYC,Upper East Side North,476,12.94,12
+Outside of NYC,Forest Hills,488,11.86,12
+Outside of NYC,Elmhurst,491,13.79,12
+Outside of NYC,Bedford,492,13.54,12
+Outside of NYC,Williamsburg (South Side),502,13.32,12
+Outside of NYC,Jackson Heights,504,13.51,12
+Outside of NYC,Gramercy,515,15.13,12
+Outside of NYC,Long Island City/Hunters Point,535,12.8,12
+Outside of NYC,Washington Heights South,538,13.11,12
+Outside of NYC,Bushwick North,540,13.51,12
+Outside of NYC,Central Harlem North,557,13.89,12
+Outside of NYC,Midtown East,570,14.05,12
+Outside of NYC,Jamaica,574,11.46,12
+Outside of NYC,Murray Hill,584,12.7,12
+Outside of NYC,Flatbush/Ditmas Park,585,13.17,12
+Outside of NYC,Midtown North,595,14.62,12
+Outside of NYC,Upper East Side South,612,13.57,12
+Outside of NYC,Park Slope,614,13.62,12
+Outside of NYC,Greenpoint,619,13.93,12
+Outside of NYC,Williamsburg (North Side),626,12.98,12
+Outside of NYC,East New York,632,13.0,12
+Outside of NYC,Clinton East,634,14.31,12
+Outside of NYC,Astoria,639,13.36,12
+Outside of NYC,West Village,654,13.7,12
+Outside of NYC,Lower East Side,672,13.96,12
+Outside of NYC,West Chelsea/Hudson Yards,690,13.73,12
+Outside of NYC,Bushwick South,693,13.78,12
+Outside of NYC,Midtown South,707,13.62,12
+Outside of NYC,TriBeCa/Civic Center,723,14.6,12
+Outside of NYC,East Chelsea,758,13.37,12
+Outside of NYC,Union Sq,771,14.84,12
+Outside of NYC,East Village,809,13.68,12
+Outside of NYC,Crown Heights North,814,14.02,12
+Outside of NYC,Times Sq/Theatre District,854,14.69,12
+Outside of NYC,Midtown Center,893,14.54,12
+Outside of NYC,JFK Airport,1165,15.26,12
+Outside of NYC,LaGuardia Airport,1169,16.44,12
+East Village,JFK Airport,311,6.45,8
+Outside of NYC,East Flatbush/Remsen Village,313,14.46,8
+Outside of NYC,UN/Turtle Bay South,315,15.36,8
+Crown Heights North,East Village,316,4.28,8
+Outside of NYC,SoHo,316,11.89,8
+Outside of NYC,Flatlands,317,14.35,8
+Outside of NYC,Upper East Side North,317,12.48,8
+Outside of NYC,Williamsbridge/Olinville,318,12.8,8
+Outside of NYC,Lincoln Square East,323,13.12,8
+Outside of NYC,Lenox Hill West,329,13.53,8
+Outside of NYC,Clinton Hill,330,13.51,8
+Outside of NYC,Melrose South,333,13.56,8
+LaGuardia Airport,Crown Heights North,334,8.52,8
+Outside of NYC,Boerum Hill,339,14.25,8
+LaGuardia Airport,East New York,345,8.55,8
+Outside of NYC,Clinton West,349,13.84,8
+Outside of NYC,Central Harlem,350,13.69,8
+Outside of NYC,Penn Station/Madison Sq West,355,13.77,8
+Outside of NYC,Garment District,356,12.47,8
+Outside of NYC,Fort Greene,358,13.48,8
+Outside of NYC,Upper West Side South,360,14.16,8
+Bushwick South,JFK Airport,364,5.55,8
+Outside of NYC,East Harlem South,365,14.06,8
+Outside of NYC,Greenwich Village North,372,13.06,8
+Outside of NYC,Forest Hills,377,13.03,8
+Outside of NYC,Greenwich Village South,378,13.83,8
+Outside of NYC,Flatiron,378,13.4,8
+Crown Heights North,LaGuardia Airport,384,4.97,8
+Outside of NYC,Ridgewood,389,12.7,8
+Crown Heights North,JFK Airport,392,5.92,8
+Outside of NYC,Mott Haven/Port Morris,399,13.19,8
+Outside of NYC,Little Italy/NoLiTa,400,13.14,8
+Outside of NYC,Jackson Heights,406,14.44,8
+Outside of NYC,Brownsville,410,14.58,8
+Outside of NYC,Financial District North,414,13.54,8
+Outside of NYC,Washington Heights South,418,12.84,8
+Outside of NYC,Canarsie,419,13.13,8
+Outside of NYC,East Harlem North,423,14.43,8
+Outside of NYC,South Ozone Park,425,13.92,8
+Outside of NYC,Flatbush/Ditmas Park,425,12.84,8
+Outside of NYC,Jamaica,428,13.72,8
+Outside of NYC,Elmhurst,437,13.1,8
+Outside of NYC,Upper East Side South,442,13.67,8
+Outside of NYC,Midtown North,449,13.71,8
+Outside of NYC,East Williamsburg,455,13.31,8
+Outside of NYC,Bushwick North,473,14.69,8
+Outside of NYC,Clinton East,478,14.67,8
+Outside of NYC,Long Island City/Hunters Point,480,14.13,8
+Outside of NYC,Prospect-Lefferts Gardens,481,14.8,8
+Outside of NYC,Park Slope,491,12.61,8
+Outside of NYC,Bedford,513,13.77,8
+Outside of NYC,Astoria,515,14.0,8
+Outside of NYC,Midtown East,518,13.06,8
+Outside of NYC,Stuyvesant Heights,522,13.0,8
+Outside of NYC,Murray Hill,533,14.08,8
+Outside of NYC,Gramercy,545,11.55,8
+Outside of NYC,Williamsburg (South Side),558,12.48,8
+Outside of NYC,Central Harlem North,565,13.62,8
+Outside of NYC,West Village,569,13.99,8
+Outside of NYC,Union Sq,572,12.53,8
+LaGuardia Airport,JFK Airport,585,9.92,8
+Outside of NYC,TriBeCa/Civic Center,594,13.51,8
+Outside of NYC,Lower East Side,597,13.74,8
+Outside of NYC,Midtown South,606,12.94,8
+Outside of NYC,Greenpoint,608,12.85,8
+Outside of NYC,West Chelsea/Hudson Yards,611,13.53,8
+Outside of NYC,East New York,656,13.13,8
+Outside of NYC,Williamsburg (North Side),674,14.15,8
+Outside of NYC,Bushwick South,692,14.3,8
+Outside of NYC,East Chelsea,711,13.43,8
+Outside of NYC,Times Sq/Theatre District,745,14.76,8
+Outside of NYC,Midtown Center,750,13.7,8
+Outside of NYC,Crown Heights North,751,13.23,8
+Outside of NYC,East Village,800,13.68,8
+Outside of NYC,LaGuardia Airport,1215,15.28,8
+Outside of NYC,JFK Airport,1216,16.04,8
+LaGuardia Airport,TriBeCa/Civic Center,313,8.64,7
+Outside of NYC,Kips Bay,314,12.96,7
+Outside of NYC,Clinton West,315,13.25,7
+Outside of NYC,Financial District North,316,13.69,7
+Astoria,JFK Airport,319,7.21,7
+Outside of NYC,Mott Haven/Port Morris,320,14.8,7
+Outside of NYC,SoHo,324,14.33,7
+LaGuardia Airport,Times Sq/Theatre District,325,8.55,7
+Outside of NYC,Forest Hills,325,14.18,7
+Outside of NYC,Sutton Place/Turtle Bay North,326,14.17,7
+Outside of NYC,Lenox Hill West,328,13.71,7
+Outside of NYC,Greenwich Village North,330,14.11,7
+Outside of NYC,UN/Turtle Bay South,330,13.3,7
+Bushwick South,JFK Airport,330,6.76,7
+Outside of NYC,Penn Station/Madison Sq West,332,14.06,7
+Outside of NYC,Battery Park City,339,13.51,7
+East Village,LaGuardia Airport,341,5.0,7
+Outside of NYC,Clinton Hill,342,13.22,7
+Outside of NYC,Fort Greene,349,13.91,7
+Outside of NYC,Upper West Side South,349,12.78,7
+Outside of NYC,Brownsville,353,12.73,7
+Outside of NYC,Ridgewood,353,15.1,7
+Outside of NYC,Sunnyside,359,11.35,7
+Outside of NYC,Greenwich Village South,361,14.92,7
+LaGuardia Airport,Crown Heights North,365,8.29,7
+Outside of NYC,Washington Heights South,368,14.09,7
+Outside of NYC,East Harlem South,371,13.12,7
+Crown Heights North,LaGuardia Airport,372,4.3,7
+LaGuardia Airport,East New York,372,8.09,7
+Outside of NYC,Garment District,374,13.4,7
+Outside of NYC,Elmhurst,377,13.47,7
+Outside of NYC,South Ozone Park,381,12.45,7
+Outside of NYC,East Harlem North,385,13.34,7
+Outside of NYC,Meatpacking/West Village West,396,13.55,7
+Outside of NYC,Upper East Side South,398,12.81,7
+Outside of NYC,Jamaica,403,13.77,7
+Outside of NYC,Prospect-Lefferts Gardens,408,14.17,7
+Outside of NYC,Flatbush/Ditmas Park,420,12.48,7
+Outside of NYC,Flatiron,431,13.64,7
+Crown Heights North,JFK Airport,432,6.05,7
+Outside of NYC,Park Slope,434,13.8,7
+Outside of NYC,Canarsie,435,12.82,7
+Outside of NYC,Gramercy,437,12.85,7
+Outside of NYC,Little Italy/NoLiTa,438,13.96,7
+Outside of NYC,East Williamsburg,445,13.23,7
+Outside of NYC,Jackson Heights,452,13.85,7
+Outside of NYC,Williamsburg (South Side),453,14.03,7
+Outside of NYC,Long Island City/Hunters Point,465,13.44,7
+Outside of NYC,Bushwick North,470,14.13,7
+Outside of NYC,Stuyvesant Heights,476,12.23,7
+Outside of NYC,Central Harlem North,478,14.12,7
+Outside of NYC,Murray Hill,493,13.53,7
+Outside of NYC,Midtown East,497,14.22,7
+Outside of NYC,Bedford,512,14.09,7
+Outside of NYC,West Village,533,12.9,7
+Outside of NYC,Clinton East,543,13.93,7
+Outside of NYC,Midtown North,547,13.25,7
+Outside of NYC,Williamsburg (North Side),565,12.84,7
+LaGuardia Airport,JFK Airport,565,9.51,7
+Outside of NYC,Astoria,588,12.85,7
+Outside of NYC,Greenpoint,607,14.34,7
+Outside of NYC,Lower East Side,610,13.41,7
+Outside of NYC,Bushwick South,615,13.89,7
+Outside of NYC,East New York,621,13.27,7
+Outside of NYC,West Chelsea/Hudson Yards,640,13.95,7
+Outside of NYC,Union Sq,654,13.85,7
+Outside of NYC,TriBeCa/Civic Center,654,13.83,7
+Outside of NYC,Midtown South,659,14.08,7
+Outside of NYC,East Chelsea,665,13.86,7
+Outside of NYC,Crown Heights North,764,12.57,7
+Outside of NYC,East Village,819,13.76,7
+Outside of NYC,Times Sq/Theatre District,833,13.65,7
+Outside of NYC,Midtown Center,839,14.73,7
+Outside of NYC,JFK Airport,1206,16.52,7
+Outside of NYC,LaGuardia Airport,1213,14.35,7
+Outside of NYC,Fort Greene,311,12.75,2
+Outside of NYC,Garment District,311,13.36,2
+Outside of NYC,Lincoln Square West,312,12.53,2
+Outside of NYC,UN/Turtle Bay South,313,12.31,2
+Outside of NYC,East Concourse/Concourse Village,315,14.61,2
+Outside of NYC,SoHo,317,12.78,2
+Outside of NYC,Yorkville West,317,12.21,2
+Outside of NYC,Sutton Place/Turtle Bay North,324,13.55,2
+Crown Heights North,East Village,324,4.24,2
+LaGuardia Airport,Crown Heights North,330,8.64,2
+East Village,JFK Airport,330,5.65,2
+Crown Heights North,LaGuardia Airport,330,5.42,2
+Outside of NYC,South Ozone Park,332,12.43,2
+Outside of NYC,Penn Station/Madison Sq West,342,14.3,2
+Outside of NYC,Lenox Hill East,345,13.46,2
+Outside of NYC,Lenox Hill West,346,12.89,2
+Outside of NYC,Financial District North,347,12.88,2
+Outside of NYC,Boerum Hill,359,12.46,2
+Outside of NYC,Jamaica,361,12.55,2
+Outside of NYC,Central Harlem,363,13.18,2
+Outside of NYC,Clinton Hill,365,12.27,2
+Outside of NYC,Meatpacking/West Village West,366,13.13,2
+Outside of NYC,Prospect-Lefferts Gardens,367,11.2,2
+Outside of NYC,East Harlem North,369,12.83,2
+Outside of NYC,Ridgewood,371,12.73,2
+Outside of NYC,Washington Heights South,374,12.34,2
+Outside of NYC,Mott Haven/Port Morris,374,12.57,2
+Outside of NYC,Elmhurst,382,12.67,2
+Outside of NYC,Upper West Side South,386,12.15,2
+Outside of NYC,Flatbush/Ditmas Park,389,13.96,2
+Outside of NYC,Canarsie,390,12.1,2
+Outside of NYC,Jackson Heights,392,12.89,2
+Outside of NYC,Flatiron,408,12.16,2
+Outside of NYC,East Harlem South,418,12.54,2
+Outside of NYC,Bushwick North,422,12.53,2
+Outside of NYC,East Williamsburg,425,12.9,2
+Outside of NYC,Greenwich Village North,425,12.44,2
+Crown Heights North,JFK Airport,428,6.39,2
+Outside of NYC,Long Island City/Hunters Point,433,12.55,2
+Outside of NYC,Lincoln Square East,437,12.19,2
+LaGuardia Airport,JFK Airport,443,10.09,2
+Outside of NYC,Little Italy/NoLiTa,445,12.58,2
+Outside of NYC,Upper East Side North,446,12.45,2
+Outside of NYC,Stuyvesant Heights,469,13.17,2
+Outside of NYC,Gramercy,471,13.06,2
+Outside of NYC,Greenwich Village South,479,13.71,2
+Outside of NYC,Upper East Side South,479,13.91,2
+Outside of NYC,Central Harlem North,483,12.71,2
+Outside of NYC,Clinton East,512,13.36,2
+Outside of NYC,Bedford,518,12.33,2
+Outside of NYC,Astoria,519,12.28,2
+Outside of NYC,Midtown North,530,13.47,2
+Outside of NYC,Greenpoint,546,12.25,2
+Outside of NYC,East New York,550,12.58,2
+Outside of NYC,Williamsburg (South Side),575,12.32,2
+Outside of NYC,Bushwick South,602,12.44,2
+Outside of NYC,Murray Hill,606,12.72,2
+Outside of NYC,East Chelsea,606,12.5,2
+Outside of NYC,Williamsburg (North Side),615,12.81,2
+Outside of NYC,Midtown East,625,13.11,2
+Outside of NYC,West Village,625,12.24,2
+Outside of NYC,Union Sq,643,12.76,2
+Outside of NYC,Midtown South,651,12.47,2
+Outside of NYC,Park Slope,659,12.04,2
+Outside of NYC,Lower East Side,662,13.2,2
+Outside of NYC,West Chelsea/Hudson Yards,666,12.13,2
+Outside of NYC,Crown Heights North,676,12.59,2
+Outside of NYC,TriBeCa/Civic Center,728,12.39,2
+Outside of NYC,Times Sq/Theatre District,761,13.2,2
+Outside of NYC,Midtown Center,867,12.76,2
+Outside of NYC,East Village,887,12.7,2
+Outside of NYC,JFK Airport,1006,15.26,2
+Outside of NYC,LaGuardia Airport,1044,14.57,2
+East Village,Midtown Center,313,3.9,1
+Outside of NYC,Meatpacking/West Village West,314,13.71,1
+Outside of NYC,Central Harlem,324,12.86,1
+East Village,JFK Airport,331,5.08,1
+Outside of NYC,Mott Haven/Port Morris,332,13.48,1
+Outside of NYC,East Harlem North,332,12.9,1
+Outside of NYC,East Harlem South,338,13.21,1
+Outside of NYC,Ridgewood,345,12.49,1
+Outside of NYC,Garment District,345,13.93,1
+Outside of NYC,Elmhurst,347,13.4,1
+Outside of NYC,Kips Bay,347,11.35,1
+Crown Heights North,LaGuardia Airport,350,4.77,1
+Outside of NYC,Sunnyside,351,12.34,1
+Outside of NYC,Canarsie,353,11.92,1
+Outside of NYC,Penn Station/Madison Sq West,362,13.14,1
+Outside of NYC,Jamaica,363,13.25,1
+Outside of NYC,Sutton Place/Turtle Bay North,377,11.62,1
+Outside of NYC,Upper West Side South,378,13.12,1
+Outside of NYC,SoHo,380,13.24,1
+Outside of NYC,Lenox Hill West,380,14.06,1
+Outside of NYC,Jackson Heights,382,14.6,1
+Outside of NYC,Clinton Hill,382,11.84,1
+Outside of NYC,Greenwich Village South,389,13.34,1
+Outside of NYC,Stuyvesant Heights,390,11.88,1
+Outside of NYC,Flatbush/Ditmas Park,390,12.61,1
+Outside of NYC,Greenwich Village North,393,12.2,1
+Crown Heights North,JFK Airport,398,6.14,1
+Outside of NYC,East Williamsburg,406,12.4,1
+Outside of NYC,Long Island City/Hunters Point,413,13.23,1
+Outside of NYC,Lincoln Square East,413,13.23,1
+LaGuardia Airport,JFK Airport,416,9.58,1
+Outside of NYC,Prospect-Lefferts Gardens,420,12.03,1
+Outside of NYC,Washington Heights South,424,12.92,1
+Outside of NYC,Bedford,434,12.42,1
+Outside of NYC,Bushwick North,437,13.32,1
+Outside of NYC,Central Harlem North,441,11.9,1
+Outside of NYC,Flatiron,441,12.43,1
+Outside of NYC,Little Italy/NoLiTa,447,12.75,1
+Outside of NYC,Astoria,449,12.55,1
+Outside of NYC,Williamsburg (South Side),455,14.09,1
+Outside of NYC,Park Slope,461,12.21,1
+Outside of NYC,East New York,468,13.84,1
+Outside of NYC,Gramercy,475,12.37,1
+Outside of NYC,Greenpoint,478,13.47,1
+Outside of NYC,Upper East Side North,486,11.67,1
+Outside of NYC,Clinton East,490,14.42,1
+Outside of NYC,Midtown East,507,12.6,1
+Outside of NYC,Williamsburg (North Side),517,13.22,1
+Outside of NYC,Midtown North,523,13.21,1
+Outside of NYC,Murray Hill,554,11.86,1
+Outside of NYC,Lower East Side,561,13.32,1
+Outside of NYC,Upper East Side South,568,12.77,1
+Outside of NYC,Bushwick South,600,12.53,1
+Outside of NYC,East Chelsea,603,14.22,1
+Outside of NYC,Midtown South,618,13.31,1
+Outside of NYC,West Chelsea/Hudson Yards,632,13.65,1
+Outside of NYC,West Village,659,12.91,1
+Outside of NYC,Crown Heights North,663,14.14,1
+Outside of NYC,TriBeCa/Civic Center,669,13.92,1
+Outside of NYC,Times Sq/Theatre District,678,12.74,1
+Outside of NYC,Union Sq,720,12.74,1
+Outside of NYC,East Village,781,13.58,1
+Outside of NYC,Midtown Center,794,13.68,1
+Outside of NYC,LaGuardia Airport,988,14.65,1
+Outside of NYC,JFK Airport,1044,15.3,1
+Outside of NYC,Battery Park City,314,13.37,11
+Outside of NYC,Hamilton Heights,317,13.59,11
+LaGuardia Airport,East Chelsea,323,8.36,11
+Outside of NYC,Flatlands,324,12.7,11
+Outside of NYC,Clinton West,331,13.85,11
+Outside of NYC,Financial District North,331,14.17,11
+Outside of NYC,Boerum Hill,332,13.61,11
+LaGuardia Airport,East New York,333,8.23,11
+Outside of NYC,East Concourse/Concourse Village,337,13.33,11
+Outside of NYC,Bedford Park,345,12.22,11
+Outside of NYC,Borough Park,350,13.21,11
+Outside of NYC,Flushing,351,14.12,11
+LaGuardia Airport,Crown Heights North,355,7.99,11
+Outside of NYC,Brownsville,357,12.47,11
+Crown Heights North,LaGuardia Airport,358,5.01,11
+Outside of NYC,Lenox Hill East,358,12.71,11
+Outside of NYC,Bay Ridge,359,12.57,11
+Outside of NYC,Ridgewood,360,14.99,11
+Outside of NYC,Sutton Place/Turtle Bay North,362,12.1,11
+Outside of NYC,Kips Bay,365,13.34,11
+Outside of NYC,Upper West Side South,367,14.5,11
+Outside of NYC,Central Harlem,368,13.61,11
+Outside of NYC,Garment District,371,13.94,11
+Outside of NYC,Lenox Hill West,373,14.3,11
+Outside of NYC,SoHo,377,11.65,11
+Outside of NYC,Washington Heights North,383,13.08,11
+Outside of NYC,East Harlem South,386,13.71,11
+Outside of NYC,Mott Haven/Port Morris,388,12.88,11
+Outside of NYC,Meatpacking/West Village West,388,13.0,11
+Outside of NYC,Flatiron,390,12.73,11
+Outside of NYC,Fort Greene,392,13.6,11
+Outside of NYC,Lincoln Square East,406,14.42,11
+Outside of NYC,Penn Station/Madison Sq West,408,13.53,11
+Outside of NYC,Greenwich Village North,410,12.42,11
+Outside of NYC,Sunnyside,413,13.19,11
+Outside of NYC,South Ozone Park,417,13.35,11
+Outside of NYC,East Harlem North,417,14.59,11
+Outside of NYC,Forest Hills,427,13.6,11
+LaGuardia Airport,JFK Airport,428,9.91,11
+Outside of NYC,Jackson Heights,441,14.17,11
+Outside of NYC,Greenwich Village South,443,12.84,11
+Outside of NYC,Elmhurst,443,12.74,11
+Outside of NYC,Prospect-Lefferts Gardens,453,12.84,11
+Outside of NYC,Clinton Hill,453,13.96,11
+Outside of NYC,Upper East Side North,457,14.45,11
+Outside of NYC,Long Island City/Hunters Point,460,12.94,11
+Outside of NYC,Little Italy/NoLiTa,467,13.95,11
+Outside of NYC,Stuyvesant Heights,467,14.52,11
+Outside of NYC,Jamaica,467,12.96,11
+Outside of NYC,Bedford,472,12.7,11
+Outside of NYC,East Williamsburg,482,12.7,11
+Outside of NYC,Flatbush/Ditmas Park,498,14.19,11
+Outside of NYC,Bushwick North,499,14.33,11
+Outside of NYC,Gramercy,521,12.64,11
+Outside of NYC,Canarsie,524,11.72,11
+Outside of NYC,Williamsburg (South Side),526,13.3,11
+Outside of NYC,Midtown East,526,12.95,11
+Outside of NYC,Central Harlem North,529,13.51,11
+Outside of NYC,Park Slope,546,13.25,11
+Outside of NYC,Midtown North,551,14.35,11
+Outside of NYC,Washington Heights South,556,12.12,11
+Outside of NYC,Upper East Side South,561,12.5,11
+Outside of NYC,Murray Hill,579,13.85,11
+Outside of NYC,Greenpoint,582,13.92,11
+Outside of NYC,East New York,582,13.03,11
+Outside of NYC,Clinton East,597,13.61,11
+Outside of NYC,Astoria,611,13.35,11
+Outside of NYC,Lower East Side,615,13.31,11
+Outside of NYC,Midtown South,639,12.89,11
+Outside of NYC,Bushwick South,649,12.66,11
+Outside of NYC,Williamsburg (North Side),669,13.37,11
+Outside of NYC,East Chelsea,678,13.02,11
+Outside of NYC,West Chelsea/Hudson Yards,710,13.37,11
+Outside of NYC,TriBeCa/Civic Center,722,13.25,11
+Outside of NYC,West Village,746,12.68,11
+Outside of NYC,Union Sq,747,13.14,11
+Outside of NYC,Crown Heights North,759,13.27,11
+Outside of NYC,Midtown Center,834,13.8,11
+Outside of NYC,Times Sq/Theatre District,852,14.03,11
+Outside of NYC,East Village,878,12.99,11
+Outside of NYC,JFK Airport,996,15.32,11
+Outside of NYC,LaGuardia Airport,1253,14.18,11
+Outside of NYC,Forest Hills,312,14.23,4
+Outside of NYC,Ridgewood,313,13.81,4
+Outside of NYC,Financial District North,314,13.49,4
+Outside of NYC,East Harlem North,315,13.89,4
+Outside of NYC,Garment District,316,13.26,4
+Bushwick South,JFK Airport,320,5.61,4
+Outside of NYC,West Concourse,321,13.05,4
+Outside of NYC,Sunnyside,327,12.2,4
+Bushwick South,LaGuardia Airport,328,5.91,4
+Outside of NYC,Brownsville,330,13.69,4
+Outside of NYC,Sutton Place/Turtle Bay North,332,13.17,4
+LaGuardia Airport,Crown Heights North,334,8.54,4
+Outside of NYC,SoHo,335,13.7,4
+Outside of NYC,Bay Ridge,335,13.58,4
+Outside of NYC,South Ozone Park,335,15.26,4
+Outside of NYC,Meatpacking/West Village West,335,12.23,4
+Outside of NYC,Penn Station/Madison Sq West,336,13.48,4
+Outside of NYC,Elmhurst,349,13.19,4
+Outside of NYC,Central Harlem,354,15.05,4
+Outside of NYC,East Harlem South,356,13.26,4
+Outside of NYC,Lenox Hill West,360,13.51,4
+Outside of NYC,Mott Haven/Port Morris,362,13.38,4
+Outside of NYC,Flatiron,368,14.11,4
+Outside of NYC,Clinton Hill,368,13.48,4
+Outside of NYC,Flatbush/Ditmas Park,369,12.77,4
+Crown Heights North,LaGuardia Airport,381,4.77,4
+Outside of NYC,Upper West Side South,383,13.11,4
+Outside of NYC,Canarsie,388,12.73,4
+Outside of NYC,Jamaica,396,14.18,4
+Crown Heights North,JFK Airport,403,5.33,4
+Outside of NYC,Washington Heights South,413,12.86,4
+Outside of NYC,Jackson Heights,421,13.37,4
+Outside of NYC,Central Harlem North,423,13.72,4
+Outside of NYC,Greenwich Village South,424,13.84,4
+Outside of NYC,Greenwich Village North,428,14.1,4
+Outside of NYC,Fort Greene,428,12.34,4
+Outside of NYC,Little Italy/NoLiTa,432,12.95,4
+Outside of NYC,Gramercy,434,14.08,4
+Outside of NYC,Williamsburg (South Side),450,13.36,4
+LaGuardia Airport,JFK Airport,451,9.8,4
+Outside of NYC,Bedford,455,13.36,4
+Outside of NYC,Stuyvesant Heights,459,12.97,4
+Outside of NYC,Long Island City/Hunters Point,461,13.34,4
+Outside of NYC,Upper East Side North,465,12.83,4
+Outside of NYC,Lincoln Square East,471,13.29,4
+Outside of NYC,East Williamsburg,474,13.35,4
+Outside of NYC,Prospect-Lefferts Gardens,475,12.39,4
+Outside of NYC,Bushwick North,489,14.15,4
+Outside of NYC,Clinton East,492,14.67,4
+Outside of NYC,Park Slope,503,14.54,4
+Outside of NYC,Greenpoint,513,13.45,4
+Outside of NYC,Upper East Side South,529,13.09,4
+Outside of NYC,Murray Hill,531,13.91,4
+Outside of NYC,Midtown East,533,14.49,4
+Outside of NYC,West Village,538,13.67,4
+Outside of NYC,East New York,560,13.69,4
+Outside of NYC,Midtown South,565,13.55,4
+Outside of NYC,Astoria,574,12.25,4
+Outside of NYC,Midtown North,580,13.23,4
+Outside of NYC,Williamsburg (North Side),582,13.55,4
+Outside of NYC,Bushwick South,594,13.12,4
+Outside of NYC,Lower East Side,602,12.69,4
+Outside of NYC,Union Sq,609,14.53,4
+Outside of NYC,West Chelsea/Hudson Yards,647,13.71,4
+Outside of NYC,TriBeCa/Civic Center,650,12.68,4
+Outside of NYC,East Chelsea,664,13.2,4
+Outside of NYC,Crown Heights North,712,13.38,4
+Outside of NYC,Midtown Center,753,14.9,4
+Outside of NYC,East Village,803,13.67,4
+Outside of NYC,Times Sq/Theatre District,810,14.76,4
+Outside of NYC,JFK Airport,1122,15.67,4
+Outside of NYC,LaGuardia Airport,1175,14.98,4
+Outside of NYC,Ridgewood,317,13.62,3
+Outside of NYC,Upper West Side South,325,14.18,3
+Outside of NYC,Downtown Brooklyn/MetroTech,326,12.99,3
+Crown Heights North,LaGuardia Airport,329,4.71,3
+Outside of NYC,Kips Bay,330,13.37,3
+Outside of NYC,Lenox Hill West,331,14.14,3
+Outside of NYC,South Ozone Park,334,15.2,3
+Outside of NYC,Mott Haven/Port Morris,335,14.45,3
+Outside of NYC,Central Harlem,336,13.09,3
+Outside of NYC,Forest Hills,338,12.9,3
+Outside of NYC,Brownsville,338,14.17,3
+Outside of NYC,Financial District North,338,13.17,3
+Outside of NYC,East Harlem South,339,13.19,3
+Outside of NYC,Garment District,345,12.37,3
+Outside of NYC,SoHo,353,12.86,3
+Outside of NYC,Clinton Hill,359,13.42,3
+LaGuardia Airport,East New York,362,7.86,3
+Outside of NYC,Canarsie,364,13.16,3
+Outside of NYC,Greenwich Village North,364,13.26,3
+Outside of NYC,East Harlem North,365,13.61,3
+Outside of NYC,Meatpacking/West Village West,370,12.0,3
+Outside of NYC,Fort Greene,371,14.76,3
+Outside of NYC,Elmhurst,371,11.74,3
+Outside of NYC,Upper East Side North,375,12.08,3
+Outside of NYC,Penn Station/Madison Sq West,377,12.69,3
+Crown Heights North,JFK Airport,382,5.65,3
+Outside of NYC,Jamaica,383,12.71,3
+Outside of NYC,Jackson Heights,404,13.11,3
+Outside of NYC,Flatiron,419,12.8,3
+Outside of NYC,East Williamsburg,419,12.84,3
+Outside of NYC,Washington Heights South,420,13.05,3
+Outside of NYC,Little Italy/NoLiTa,420,13.53,3
+LaGuardia Airport,JFK Airport,420,9.21,3
+Outside of NYC,Prospect-Lefferts Gardens,427,13.26,3
+Outside of NYC,Bushwick North,437,13.5,3
+Outside of NYC,Lincoln Square East,438,13.04,3
+Outside of NYC,Central Harlem North,441,13.55,3
+Outside of NYC,Upper East Side South,441,11.42,3
+Outside of NYC,Greenwich Village South,446,14.52,3
+Outside of NYC,Long Island City/Hunters Point,447,13.88,3
+Outside of NYC,Flatbush/Ditmas Park,460,13.28,3
+Outside of NYC,Gramercy,460,13.87,3
+Outside of NYC,Midtown East,484,13.36,3
+Outside of NYC,Stuyvesant Heights,489,12.85,3
+Outside of NYC,Park Slope,494,14.2,3
+Outside of NYC,Greenpoint,495,13.33,3
+Outside of NYC,Midtown North,505,13.15,3
+Outside of NYC,Williamsburg (South Side),507,13.43,3
+Outside of NYC,Clinton East,510,13.47,3
+Outside of NYC,Bedford,538,13.05,3
+Outside of NYC,Murray Hill,539,12.1,3
+Outside of NYC,Bushwick South,539,12.25,3
+Outside of NYC,Astoria,543,12.33,3
+Outside of NYC,Williamsburg (North Side),597,12.73,3
+Outside of NYC,Midtown South,607,13.31,3
+Outside of NYC,East New York,615,12.64,3
+Outside of NYC,TriBeCa/Civic Center,628,13.78,3
+Outside of NYC,East Chelsea,631,14.02,3
+Outside of NYC,West Chelsea/Hudson Yards,648,12.59,3
+Outside of NYC,West Village,648,12.05,3
+Outside of NYC,Union Sq,653,12.44,3
+Outside of NYC,Lower East Side,677,13.28,3
+Outside of NYC,Times Sq/Theatre District,746,13.66,3
+Outside of NYC,Crown Heights North,771,13.09,3
+Outside of NYC,East Village,781,13.19,3
+Outside of NYC,Midtown Center,792,13.53,3
+Outside of NYC,JFK Airport,980,15.61,3
+Outside of NYC,LaGuardia Airport,1109,14.58,3
+JFK Airport,TriBeCa/Civic Center,317,11.85,5
+JFK Airport,East Village,322,10.67,5
+JFK Airport,Astoria,324,11.27,5
+Midtown Center,JFK Airport,324,6.09,5
+JFK Airport,East New York,330,13.06,5
+JFK Airport,Times Sq/Theatre District,345,11.87,5
+JFK Airport,Midtown Center,364,11.83,5
+JFK Airport,Crown Heights North,396,11.78,5
+JFK Airport,LaGuardia Airport,552,11.14,5
+JFK Airport,East Village,316,10.09,10
+JFK Airport,TriBeCa/Civic Center,316,10.77,10
+JFK Airport,Times Sq/Theatre District,316,11.66,10
+JFK Airport,Crown Heights North,318,11.85,10
+JFK Airport,Midtown Center,325,10.9,10
+Midtown Center,JFK Airport,327,5.73,10
+JFK Airport,LaGuardia Airport,456,12.09,10
+Midtown South,LaGuardia Airport,319,5.53,9
+Midtown Center,LaGuardia Airport,320,4.81,9
+JFK Airport,Times Sq/Theatre District,328,10.88,9
+JFK Airport,East New York,329,11.34,9
+JFK Airport,Crown Heights North,335,11.76,9
+JFK Airport,LaGuardia Airport,521,11.94,9
+West Chelsea/Hudson Yards,LaGuardia Airport,339,5.62,5
+Times Sq/Theatre District,JFK Airport,362,6.64,5
+West Chelsea/Hudson Yards,JFK Airport,375,6.46,5
+Times Sq/Theatre District,LaGuardia Airport,408,5.62,5
+Times Sq/Theatre District,JFK Airport,328,6.21,9
+West Chelsea/Hudson Yards,LaGuardia Airport,352,4.45,9
+Times Sq/Theatre District,LaGuardia Airport,371,5.98,9
+JFK Airport,East New York,318,11.98,6
+JFK Airport,East Chelsea,319,11.64,6
+JFK Airport,Bushwick South,327,11.21,6
+JFK Airport,Times Sq/Theatre District,346,11.39,6
+JFK Airport,Crown Heights North,370,11.67,6
+JFK Airport,LaGuardia Airport,454,12.24,6
+JFK Airport,Times Sq/Theatre District,332,11.12,8
+JFK Airport,Bushwick South,349,10.43,8
+JFK Airport,East Village,357,10.64,8
+JFK Airport,Crown Heights North,357,11.01,8
+JFK Airport,East New York,368,10.36,8
+JFK Airport,LaGuardia Airport,575,11.94,8
+Midtown Center,JFK Airport,314,5.57,1
+JFK Airport,East New York,316,10.93,1
+JFK Airport,Times Sq/Theatre District,336,11.08,1
+JFK Airport,LaGuardia Airport,436,11.26,1
+JFK Airport,East Village,313,10.98,7
+JFK Airport,Bushwick South,333,11.21,7
+JFK Airport,Times Sq/Theatre District,354,11.66,7
+JFK Airport,Crown Heights North,373,10.99,7
+JFK Airport,LaGuardia Airport,509,11.27,7
+Times Sq/Theatre District,JFK Airport,319,6.36,6
+West Chelsea/Hudson Yards,LaGuardia Airport,354,4.68,6
+Midtown Center,LaGuardia Airport,312,4.99,12
+JFK Airport,Crown Heights North,326,11.36,12
+JFK Airport,Astoria,335,11.15,12
+JFK Airport,East New York,351,11.18,12
+JFK Airport,LaGuardia Airport,449,11.71,12
+East Chelsea,LaGuardia Airport,313,5.93,9
+Williamsburg (North Side),LaGuardia Airport,319,5.59,9
+JFK Airport,East Village,318,10.57,2
+JFK Airport,Crown Heights North,321,10.95,2
+JFK Airport,East New York,345,11.42,2
+JFK Airport,LaGuardia Airport,406,11.75,2
+Times Sq/Theatre District,JFK Airport,319,6.64,8
+Times Sq/Theatre District,LaGuardia Airport,345,5.47,8
+Times Sq/Theatre District,LaGuardia Airport,321,5.4,7
+Times Sq/Theatre District,JFK Airport,337,6.87,7
+Times Sq/Theatre District,JFK Airport,317,7.2,10
+Greenpoint,JFK Airport,322,6.99,10
+East Chelsea,LaGuardia Airport,330,4.86,5
+Union Sq,LaGuardia Airport,335,5.15,5
+East Chelsea,JFK Airport,318,6.82,7
+East Chelsea,LaGuardia Airport,328,4.78,7
+Times Sq/Theatre District,JFK Airport,346,6.0,1
+East Chelsea,LaGuardia Airport,332,4.96,8
+East Chelsea,JFK Airport,320,5.55,1
+East New York,JFK Airport,320,5.2,4
+JFK Airport,TriBeCa/Civic Center,328,11.31,4
+JFK Airport,East New York,329,10.25,4
+JFK Airport,Crown Heights North,350,11.05,4
+JFK Airport,LaGuardia Airport,516,12.07,4
+JFK Airport,Midtown Center,314,10.23,3
+JFK Airport,Crown Heights North,325,11.35,3
+JFK Airport,East Village,329,11.07,3
+JFK Airport,East New York,334,11.09,3
+JFK Airport,LaGuardia Airport,397,12.21,3
+JFK Airport,Crown Heights North,313,11.47,11
+JFK Airport,LaGuardia Airport,440,11.76,11
+Times Sq/Theatre District,LaGuardia Airport,332,5.92,11
+Times Sq/Theatre District,LaGuardia Airport,323,6.04,4
+East Chelsea,LaGuardia Airport,342,4.43,4

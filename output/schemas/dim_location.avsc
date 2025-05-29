@@ -1,0 +1,31 @@
+{
+  "type" : "record",
+  "name" : "dim_location",
+  "doc" : "Sqoop import of dim_location",
+  "fields" : [ {
+    "name" : "location_id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "location_id",
+    "sqlType" : "4"
+  }, {
+    "name" : "zone",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "zone",
+    "sqlType" : "12"
+  }, {
+    "name" : "borough",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "borough",
+    "sqlType" : "12"
+  }, {
+    "name" : "service_zone",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "service_zone",
+    "sqlType" : "12"
+  } ],
+  "tableName" : "dim_location"
+}

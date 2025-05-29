@@ -1,0 +1,159 @@
+2025-05-03 19:33:56,499 INFO client.RMProxy: Connecting to ResourceManager at hadoop-03.uni.innopolis.ru/10.100.30.59:8032
+2025-05-03 19:33:56,628 INFO client.AHSProxy: Connecting to Application History server at hadoop-04.uni.innopolis.ru/10.100.30.60:10200
+2025-05-03 19:33:56,832 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /user/team6/.staging/job_1745788519616_1766
+2025-05-03 19:33:57,055 INFO input.FileInputFormat: Total input files to process : 1
+2025-05-03 19:33:57,160 INFO mapreduce.JobSubmitter: number of splits:5
+2025-05-03 19:33:57,281 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1745788519616_1766
+2025-05-03 19:33:57,282 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2025-05-03 19:33:57,437 INFO conf.Configuration: resource-types.xml not found
+2025-05-03 19:33:57,437 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2025-05-03 19:33:57,489 INFO impl.YarnClientImpl: Submitted application application_1745788519616_1766
+2025-05-03 19:33:57,519 INFO mapreduce.Job: The url to track the job: http://hadoop-03.uni.innopolis.ru:8088/proxy/application_1745788519616_1766/
+2025-05-03 19:33:57,521 INFO mapreduce.Job: Running job: job_1745788519616_1766
+2025-05-03 19:34:02,592 INFO mapreduce.Job: Job job_1745788519616_1766 running in uber mode : false
+2025-05-03 19:34:02,593 INFO mapreduce.Job:  map 0% reduce 0%
+2025-05-03 19:34:11,727 INFO mapreduce.Job:  map 20% reduce 0%
+2025-05-03 19:34:18,780 INFO mapreduce.Job:  map 100% reduce 0%
+2025-05-03 19:34:27,840 INFO mapreduce.Job:  map 100% reduce 91%
+2025-05-03 19:34:29,856 INFO mapreduce.Job:  map 100% reduce 100%
+2025-05-03 19:34:29,867 INFO mapreduce.Job: Job job_1745788519616_1766 completed successfully
+2025-05-03 19:34:29,963 INFO mapreduce.Job: Counters: 55
+	File System Counters
+		FILE: Number of bytes read=2257095859
+		FILE: Number of bytes written=3386975705
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=592147080
+		HDFS: Number of bytes written=1155630501
+		HDFS: Number of read operations=20
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters 
+		Killed map tasks=1
+		Launched map tasks=6
+		Launched reduce tasks=1
+		Data-local map tasks=6
+		Total time spent by all maps in occupied slots (ms)=66398
+		Total time spent by all reduces in occupied slots (ms)=15442
+		Total time spent by all map tasks (ms)=66398
+		Total time spent by all reduce tasks (ms)=15442
+		Total vcore-milliseconds taken by all map tasks=66398
+		Total vcore-milliseconds taken by all reduce tasks=15442
+		Total megabyte-milliseconds taken by all map tasks=67991552
+		Total megabyte-milliseconds taken by all reduce tasks=15812608
+	Map-Reduce Framework
+		Map input records=5444637
+		Map output records=10869749
+		Map output bytes=1164182343
+		Map output materialized bytes=1128396579
+		Input split bytes=865
+		Combine input records=15697589
+		Combine output records=10127172
+		Reduce input groups=5279055
+		Reduce shuffle bytes=1128396579
+		Reduce input records=5299332
+		Reduce output records=5279055
+		Spilled Records=15915085
+		Shuffled Maps =5
+		Failed Shuffles=0
+		Merged Map outputs=5
+		GC time elapsed (ms)=1934
+		CPU time spent (ms)=101990
+		Physical memory (bytes) snapshot=3662872576
+		Virtual memory (bytes) snapshot=17213956096
+		Total committed heap usage (bytes)=4818731008
+		Peak Map Physical memory (bytes)=658735104
+		Peak Map Virtual memory (bytes)=2869755904
+		Peak Reduce Physical memory (bytes)=442707968
+		Peak Reduce Virtual memory (bytes)=2871705600
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=592146215
+	File Output Format Counters 
+		Bytes Written=1155630501
+2025-05-03 19:34:29,993 INFO client.RMProxy: Connecting to ResourceManager at hadoop-03.uni.innopolis.ru/10.100.30.59:8032
+2025-05-03 19:34:29,994 INFO client.AHSProxy: Connecting to Application History server at hadoop-04.uni.innopolis.ru/10.100.30.60:10200
+2025-05-03 19:34:30,009 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /user/team6/.staging/job_1745788519616_1767
+2025-05-03 19:34:30,053 INFO input.FileInputFormat: Total input files to process : 1
+2025-05-03 19:34:30,132 INFO mapreduce.JobSubmitter: number of splits:9
+2025-05-03 19:34:30,178 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1745788519616_1767
+2025-05-03 19:34:30,178 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2025-05-03 19:34:30,200 INFO impl.YarnClientImpl: Submitted application application_1745788519616_1767
+2025-05-03 19:34:30,202 INFO mapreduce.Job: The url to track the job: http://hadoop-03.uni.innopolis.ru:8088/proxy/application_1745788519616_1767/
+2025-05-03 19:34:30,203 INFO mapreduce.Job: Running job: job_1745788519616_1767
+2025-05-03 19:34:35,259 INFO mapreduce.Job: Job job_1745788519616_1767 running in uber mode : false
+2025-05-03 19:34:35,259 INFO mapreduce.Job:  map 0% reduce 0%
+2025-05-03 19:34:44,323 INFO mapreduce.Job:  map 67% reduce 0%
+2025-05-03 19:34:45,329 INFO mapreduce.Job:  map 100% reduce 0%
+2025-05-03 19:34:56,392 INFO mapreduce.Job:  map 100% reduce 100%
+2025-05-03 19:34:57,410 INFO mapreduce.Job: Job job_1745788519616_1767 completed successfully
+2025-05-03 19:34:57,437 INFO mapreduce.Job: Counters: 55
+	File System Counters
+		FILE: Number of bytes read=2256064130
+		FILE: Number of bytes written=3386562491
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=1155987314
+		HDFS: Number of bytes written=1077228392
+		HDFS: Number of read operations=41
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+		HDFS: Number of bytes read erasure-coded=0
+	Job Counters 
+		Killed map tasks=1
+		Launched map tasks=9
+		Launched reduce tasks=1
+		Data-local map tasks=9
+		Total time spent by all maps in occupied slots (ms)=64774
+		Total time spent by all reduces in occupied slots (ms)=10523
+		Total time spent by all map tasks (ms)=64774
+		Total time spent by all reduce tasks (ms)=10523
+		Total vcore-milliseconds taken by all map tasks=64774
+		Total vcore-milliseconds taken by all reduce tasks=10523
+		Total megabyte-milliseconds taken by all map tasks=66328576
+		Total megabyte-milliseconds taken by all reduce tasks=10775552
+	Map-Reduce Framework
+		Map input records=5279055
+		Map output records=5279055
+		Map output bytes=1113172755
+		Map output materialized bytes=1128032056
+		Input split bytes=1323
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=219
+		Reduce shuffle bytes=1128032056
+		Reduce input records=5279055
+		Reduce output records=5279055
+		Spilled Records=15837165
+		Shuffled Maps =9
+		Failed Shuffles=0
+		Merged Map outputs=9
+		GC time elapsed (ms)=4741
+		CPU time spent (ms)=77190
+		Physical memory (bytes) snapshot=6363635712
+		Virtual memory (bytes) snapshot=28654092288
+		Total committed heap usage (bytes)=8196718592
+		Peak Map Physical memory (bytes)=610721792
+		Peak Map Virtual memory (bytes)=2866212864
+		Peak Reduce Physical memory (bytes)=956018688
+		Peak Reduce Virtual memory (bytes)=2874171392
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=1155985991
+	File Output Format Counters 
+		Bytes Written=1077228392

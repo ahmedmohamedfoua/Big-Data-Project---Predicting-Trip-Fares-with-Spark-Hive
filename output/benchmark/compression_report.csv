@@ -1,0 +1,3 @@
+codec,import_time_sec,data_size_mb,query_time_sec
+snappy,246,820.16,81
+deflate,303,564.21,63

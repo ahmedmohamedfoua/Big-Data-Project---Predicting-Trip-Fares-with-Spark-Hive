@@ -1,0 +1,157 @@
+{
+  "type" : "record",
+  "name" : "fact_fhv_trips",
+  "doc" : "Sqoop import of fact_fhv_trips",
+  "fields" : [ {
+    "name" : "hvfhs_license_num",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "hvfhs_license_num",
+    "sqlType" : "12"
+  }, {
+    "name" : "dispatching_base_num",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "dispatching_base_num",
+    "sqlType" : "12"
+  }, {
+    "name" : "originating_base_num",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "originating_base_num",
+    "sqlType" : "12"
+  }, {
+    "name" : "request_datetime",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "request_datetime",
+    "sqlType" : "93"
+  }, {
+    "name" : "on_scene_datetime",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "on_scene_datetime",
+    "sqlType" : "93"
+  }, {
+    "name" : "pickup_datetime",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "pickup_datetime",
+    "sqlType" : "93"
+  }, {
+    "name" : "dropoff_datetime",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "dropoff_datetime",
+    "sqlType" : "93"
+  }, {
+    "name" : "pu_location_id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "pu_location_id",
+    "sqlType" : "4"
+  }, {
+    "name" : "do_location_id",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "do_location_id",
+    "sqlType" : "4"
+  }, {
+    "name" : "trip_miles",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "trip_miles",
+    "sqlType" : "8"
+  }, {
+    "name" : "trip_time",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "trip_time",
+    "sqlType" : "-5"
+  }, {
+    "name" : "base_passenger_fare",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "base_passenger_fare",
+    "sqlType" : "8"
+  }, {
+    "name" : "tolls",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "tolls",
+    "sqlType" : "8"
+  }, {
+    "name" : "bcf",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "bcf",
+    "sqlType" : "8"
+  }, {
+    "name" : "sales_tax",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "sales_tax",
+    "sqlType" : "8"
+  }, {
+    "name" : "congestion_surcharge",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "congestion_surcharge",
+    "sqlType" : "8"
+  }, {
+    "name" : "airport_fee",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "airport_fee",
+    "sqlType" : "8"
+  }, {
+    "name" : "tips",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "tips",
+    "sqlType" : "8"
+  }, {
+    "name" : "driver_pay",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "driver_pay",
+    "sqlType" : "8"
+  }, {
+    "name" : "shared_request_flag",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "shared_request_flag",
+    "sqlType" : "12"
+  }, {
+    "name" : "shared_match_flag",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "shared_match_flag",
+    "sqlType" : "12"
+  }, {
+    "name" : "access_a_ride_flag",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "access_a_ride_flag",
+    "sqlType" : "12"
+  }, {
+    "name" : "wav_request_flag",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "wav_request_flag",
+    "sqlType" : "12"
+  }, {
+    "name" : "wav_match_flag",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "wav_match_flag",
+    "sqlType" : "12"
+  }, {
+    "name" : "___index_level_0__",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "__index_level_0__",
+    "sqlType" : "-5"
+  } ],
+  "tableName" : "fact_fhv_trips"
+}

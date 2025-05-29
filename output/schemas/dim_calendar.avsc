@@ -1,0 +1,49 @@
+{
+  "type" : "record",
+  "name" : "dim_calendar",
+  "doc" : "Sqoop import of dim_calendar",
+  "fields" : [ {
+    "name" : "date_key",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "date_key",
+    "sqlType" : "91"
+  }, {
+    "name" : "year",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "year",
+    "sqlType" : "5"
+  }, {
+    "name" : "quarter",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "quarter",
+    "sqlType" : "5"
+  }, {
+    "name" : "month",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "month",
+    "sqlType" : "5"
+  }, {
+    "name" : "day",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "day",
+    "sqlType" : "5"
+  }, {
+    "name" : "day_of_week",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "day_of_week",
+    "sqlType" : "5"
+  }, {
+    "name" : "is_weekend",
+    "type" : [ "null", "boolean" ],
+    "default" : null,
+    "columnName" : "is_weekend",
+    "sqlType" : "-7"
+  } ],
+  "tableName" : "dim_calendar"
+}
