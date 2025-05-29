@@ -37,7 +37,7 @@ supervised modeling (Linear Regression & GBT), and end-to-end deployment plannin
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.com/big_data_assignment_2/my-big-data-project-2025.git
+git remote add origin https://github.com/VladimirZelenokor1/Big-Data-Project---Predicting-Trip-Fares-with-Spark-Hive
 git branch -M main
 git push -uf origin main
 ```
