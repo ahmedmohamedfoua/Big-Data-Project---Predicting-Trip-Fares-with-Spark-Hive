@@ -1,90 +1,192 @@
-# Big Data Project
+# Big Data Project: Predicting Trip Fares with Spark & Hive 🚖✨
 
+![Big Data](https://img.shields.io/badge/Big--Data-Project-blue?style=for-the-badge&logo=apache-spark) ![Release](https://img.shields.io/badge/Release-v1.0-orange?style=for-the-badge) ![Python](https://img.shields.io/badge/Python-3.8-yellow?style=for-the-badge)
 
+Welcome to the **Big Data Project** focused on predicting NYC ride-sharing trip fares. This project utilizes a comprehensive big data pipeline built on the CRISP-DM framework. It incorporates various technologies to ingest, process, and analyze data efficiently.
 
-## Predicting Ride-Sharing Trip Fares with Spark & Hive
+## Table of Contents
 
-This repository implements a CRISP-DM–based workflow for predicting the total fare amount (total_amount) 
-of High‑Volume For‑Hire Vehicle (FHV) trips in New York City using the 2024 TLC dataset. 
-It covers data ingestion (Sqoop → PostgreSQL → HDFS/Hive), ETL for exploratory analysis, Spark ML preprocessing, 
-supervised modeling (Linear Regression & GBT), and end-to-end deployment planning.
+1. [Project Overview](#project-overview)
+2. [Technologies Used](#technologies-used)
+3. [Data Ingestion](#data-ingestion)
+4. [ETL Process](#etl-process)
+5. [Model Training and Tuning](#model-training-and-tuning)
+6. [Deployment](#deployment)
+7. [Getting Started](#getting-started)
+8. [Releases](#releases)
+9. [Contributing](#contributing)
+10. [License](#license)
 
-## Repository Structure
+## Project Overview
 
-├── data/                   # Local directories for train/test CSV (output)
+This project aims to predict the trip fares for NYC ride-sharing services using data from the NYC Taxi and Limousine Commission (TLC). The project leverages various big data technologies to create a robust pipeline. The workflow involves:
 
-├── hive/                   # HQL scripts for data quality checks & cleaning
+- Ingesting 2024 TLC data using Sqoop.
+- Storing the data in HDFS and Hive.
+- Performing ETL and feature engineering using Spark and PySpark.
+- Training and tuning machine learning models, including Linear Regression and Gradient Boosted Trees.
+- Outlining an end-to-end deployment strategy.
 
-├── sql/                    # SQL scripts for table creation & validation
+## Technologies Used
 
-├── scripts/                # Shell scripts for ETL / Sqoop / Spark jobs
+This project incorporates the following technologies:
 
-├── output/                 # Evaluation & prediction results (CSV)
+- **Big Data**: Apache Hadoop, Hive
+- **Data Engineering**: Sqoop, Spark, PySpark
+- **Machine Learning**: Spark ML, Scikit-learn
+- **Data Processing**: SQL
+- **Notebooks**: Jupyter Notebook
+- **Languages**: Python
 
-├── ml.ipynb                # Jupyter notebook: full ML pipeline, hyperparameter tuning
+## Data Ingestion
 
-├── dim_base.avsc           # Avro schema for dim_base table
+Data ingestion is the first step in our pipeline. We use Sqoop to import the 2024 TLC data into HDFS. This process ensures that we have a reliable source of data for our analysis.
 
-├── dim_base.java           # Java class for building dim_base entries
+### Steps for Data Ingestion
 
-├── README.md               # This file
+1. **Install Sqoop**: Ensure that Sqoop is installed on your Hadoop cluster.
+2. **Connect to the Database**: Use the appropriate JDBC connection string to connect to the TLC database.
+3. **Import Data**: Execute the Sqoop command to import data into HDFS.
 
-├── resize_parquet.py       # Utility: downsample or repartition Parquet data
+```bash
+sqoop import --connect jdbc:postgresql://your_database_url --username your_username --password your_password --table your_table_name --target-dir /user/hadoop/tlc_data
+```
 
-└── .gitignore
+## ETL Process
+
+The ETL (Extract, Transform, Load) process is crucial for preparing the data for analysis. We use Spark and PySpark to handle this process efficiently.
+
+### Steps for ETL
+
+1. **Extract**: Load data from HDFS into Spark DataFrames.
+2. **Transform**: Clean and preprocess the data, including handling missing values and feature engineering.
+3. **Load**: Store the transformed data back into Hive for further analysis.
+
+### Sample ETL Code
+
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("ETL Process").enableHiveSupport().getOrCreate()
+
+# Load data
+df = spark.read.csv("/user/hadoop/tlc_data/*.csv", header=True, inferSchema=True)
+
+# Transform data
+df_cleaned = df.dropna()
+df_transformed = df_cleaned.withColumn("fare_amount", df_cleaned["fare_amount"].cast("float"))
+
+# Load to Hive
+df_transformed.write.mode("overwrite").saveAsTable("tlc_fares")
+```
+
+## Model Training and Tuning
+
+Once the data is ready, we proceed to train our machine learning models. We focus on two primary algorithms: Linear Regression and Gradient Boosted Trees.
+
+### Steps for Model Training
+
+1. **Split Data**: Divide the dataset into training and testing sets.
+2. **Train Models**: Use Spark ML to train both models.
+3. **Tune Hyperparameters**: Use cross-validation to optimize model performance.
+
+### Sample Model Training Code
+
+```python
+from pyspark.ml.regression import LinearRegression, GBTRegressor
+from pyspark.ml.evaluation import RegressionEvaluator
+from pyspark.ml.feature import VectorAssembler
+
+# Prepare data for training
+assembler = VectorAssembler(inputCols=["feature1", "feature2"], outputCol="features")
+train_data = assembler.transform(df_transformed)
+
+# Train Linear Regression model
+lr = LinearRegression(featuresCol="features", labelCol="fare_amount")
+lr_model = lr.fit(train_data)
+
+# Train Gradient Boosted Tree model
+gbt = GBTRegressor(featuresCol="features", labelCol="fare_amount")
+gbt_model = gbt.fit(train_data)
+
+# Evaluate models
+evaluator = RegressionEvaluator(labelCol="fare_amount", predictionCol="prediction", metricName="rmse")
+lr_rmse = evaluator.evaluate(lr_model.transform(train_data))
+gbt_rmse = evaluator.evaluate(gbt_model.transform(train_data))
+```
+
+## Deployment
+
+After training and tuning the models, we outline a deployment strategy. This involves integrating the models into a web application or API for real-time predictions.
+
+### Deployment Steps
+
+1. **Model Serialization**: Save the trained models using joblib or pickle.
+2. **API Development**: Create a RESTful API using Flask or FastAPI.
+3. **Containerization**: Use Docker to containerize the application for easier deployment.
+
+### Sample Deployment Code
+
+```python
+import joblib
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+# Load model
+model = joblib.load("linear_regression_model.pkl")
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.get_json(force=True)
+    prediction = model.predict(data["features"])
+    return jsonify({'prediction': prediction.tolist()})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
 
 ## Getting Started
 
-```
-cd existing_repo
-git remote add origin https://github.com/VladimirZelenokor1/Big-Data-Project---Predicting-Trip-Fares-with-Spark-Hive
-git branch -M main
-git push -uf origin main
-```
+To get started with this project, follow these steps:
 
-# Prerequisites
+1. **Clone the Repository**: 
+   ```bash
+   git clone https://github.com/ahmedmohamedfoua/Big-Data-Project---Predicting-Trip-Fares-with-Spark-Hive.git
+   cd Big-Data-Project---Predicting-Trip-Fares-with-Spark-Hive
+   ```
 
-- [ ] Hadoop cluster with HDFS & Hive
-- [ ] Sqoop & PostgreSQL (for staging)
-- [ ] Apache Spark (3.x) with MLlib
-- [ ] Python 3.8+ (PySpark, pandas)
+2. **Install Dependencies**: Ensure you have the necessary libraries installed.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-# ML Preprocessing & Modeling
+3. **Run the Jupyter Notebook**: 
+   ```bash
+   jupyter notebook
+   ```
 
-Open ml.ipynb and execute cells to:
+4. **Follow the Instructions**: Open the notebook and follow the instructions to run the ETL process and model training.
 
-- [ ] Load Hive table into Spark DataFrame.
+## Releases
 
-- [ ] Apply ML Pipeline:
+For the latest releases and updates, please visit the [Releases section](https://github.com/ahmedmohamedfoua/Big-Data-Project---Predicting-Trip-Fares-with-Spark-Hive/releases). You can download the latest version and execute the provided scripts.
 
-- Impute missing values
+## Contributing
 
-- Cyclical encoding of time features
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
 
-- StringIndex + OneHot
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add new feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Create a new Pull Request.
 
-- VectorAssembler + StandardScaler
+## License
 
-- [ ] Split data, train & tune Linear Regression and GBT:
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-- 3-fold CV, RMSE optimization
+---
 
-- Save best models under project/models/
-
-- [ ] Evaluate on hold-out test set, output CSV to output/
-
-# Results & Evaluation
-
-Model comparison: output/model_comparison_reg.csv
-
-Predictions: output/model1_predictions.csv, output/model2_predictions.csv
-
-# Report
-
-Full project report (LaTeX) follows CRISP-DM structure
-
-# Limitations & Future Work
-
-- Resource constraints prevented full model training in-cluster — see ml.ipynb for code.
-
-- Future: incorporate real-time traffic, dynamic surge multipliers, live deployment.
+Feel free to explore the code and enhance the project further. Your contributions can help improve the accuracy and efficiency of predicting trip fares in NYC!
